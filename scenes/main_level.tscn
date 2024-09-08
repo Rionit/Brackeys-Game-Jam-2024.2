@@ -1,0 +1,326 @@
+[gd_scene load_steps=11 format=3 uid="uid://m8x7hr1574di"]
+
+[ext_resource type="ArrayMesh" uid="uid://leh6ovckg0jo" path="res://assets/office/office_Floor.res" id="1_eptkj"]
+[ext_resource type="ArrayMesh" uid="uid://8etpjcuylarp" path="res://assets/office/office_Wall_Small.res" id="2_6d3ep"]
+[ext_resource type="ArrayMesh" uid="uid://dvbs3kcndemb7" path="res://assets/office/office_Office_Desk_4.res" id="3_5nv0p"]
+[ext_resource type="ArrayMesh" uid="uid://qfqmm30las36" path="res://assets/office/office_Computer_Monitor.res" id="4_htt3v"]
+[ext_resource type="ArrayMesh" uid="uid://bmuuhhqfg4o3m" path="res://assets/office/office_Computer_Case.res" id="5_l38ul"]
+[ext_resource type="ArrayMesh" uid="uid://na8gtruwlj5t" path="res://assets/office/office_Computer_Keyboard.res" id="6_67g1t"]
+[ext_resource type="ArrayMesh" uid="uid://bdn6yffewpeyo" path="res://assets/office/office_Computer_Mouse.res" id="7_bfc6p"]
+[ext_resource type="ArrayMesh" uid="uid://dfaoq4nk7jcft" path="res://assets/office/office_Chair_Office_Bottom.res" id="8_60ajx"]
+[ext_resource type="ArrayMesh" uid="uid://dq0ahk4agehf5" path="res://assets/office/office_Chair_Office_Base_A.res" id="9_h420i"]
+[ext_resource type="ArrayMesh" uid="uid://6g8taxgj5mgf" path="res://assets/office/office_Chair_Office_Wheel.res" id="10_1rtu8"]
+
+[node name="MainLevel" type="Node3D"]
+
+[node name="Floor" type="Node3D" parent="."]
+
+[node name="OfficeFloor" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor2" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor3" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor4" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 2)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor5" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor6" type="MeshInstance3D" parent="Floor"]
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor7" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor8" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor9" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor10" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor11" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor12" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -2)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor13" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -4)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor14" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor15" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor16" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor17" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -8)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor18" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -8)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor19" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -6)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor20" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -6)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor21" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -8)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor22" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor23" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -6)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor24" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor25" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -12)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor26" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -12)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor27" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -10)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor28" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -10)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor29" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -12)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor30" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor31" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -10)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeFloor32" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = ExtResource("1_eptkj")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="Cubicles" type="Node3D" parent="."]
+
+[node name="Cubicle 1" type="Node3D" parent="Cubicles"]
+
+[node name="OfficeWallSmall5" type="MeshInstance3D" parent="Cubicles/Cubicle 1"]
+transform = Transform3D(1.34388, 0, 0, 0, 1, 0, -3.55271e-15, 0, 1, 0, 0, -1)
+mesh = ExtResource("2_6d3ep")
+skeleton = NodePath("../../..")
+
+[node name="OfficeWallSmall4" type="MeshInstance3D" parent="Cubicles/Cubicle 1"]
+transform = Transform3D(-6.55845e-08, 0, 1, 0, 1, 0, -1.5004, 0, -4.37114e-08, 1.31169e-07, 0, -0.999203)
+mesh = ExtResource("2_6d3ep")
+skeleton = NodePath("../../..")
+
+[node name="OfficeOfficeDesk5" type="MeshInstance3D" parent="Cubicles/Cubicle 1"]
+transform = Transform3D(-7.54979e-08, 6.60024e-15, 1, 8.74228e-08, 1, 0, -1, 8.74228e-08, -7.54979e-08, 0.395937, -4.49408e-08, -2.28606)
+mesh = ExtResource("3_5nv0p")
+skeleton = NodePath("../../..")
+
+[node name="Cubicle 2" type="Node3D" parent="Cubicles"]
+
+[node name="OfficeWallSmall2" type="MeshInstance3D" parent="Cubicles/Cubicle 2"]
+transform = Transform3D(1.34388, 0, 0, 0, 1, 0, -3.55271e-15, 0, 1, 0, 0, -4)
+mesh = ExtResource("2_6d3ep")
+skeleton = NodePath("../../..")
+
+[node name="OfficeWallSmall3" type="MeshInstance3D" parent="Cubicles/Cubicle 2"]
+transform = Transform3D(-6.55845e-08, 0, 1, 0, 1, 0, -1.5004, 0, -4.37114e-08, 0, 0, -4)
+mesh = ExtResource("2_6d3ep")
+skeleton = NodePath("../../..")
+
+[node name="OfficeOfficeDesk4" type="MeshInstance3D" parent="Cubicles/Cubicle 2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.395937, 0, -5.3008)
+mesh = ExtResource("3_5nv0p")
+skeleton = NodePath("../../..")
+
+[node name="OfficeComputerMonitor" type="MeshInstance3D" parent="Cubicles/Cubicle 2"]
+transform = Transform3D(-0.000296749, 0, 1, 0, 1, 0, -1, 0, -0.000296749, 0.352437, 0.970103, -5.28361)
+mesh = ExtResource("4_htt3v")
+
+[node name="OfficeComputerCase" type="MeshInstance3D" parent="Cubicles/Cubicle 2"]
+transform = Transform3D(0.0467403, 0, 0.998907, 0, 1, 0, -0.998907, 0, 0.0467403, 0.244693, 0.952684, -5.69101)
+mesh = ExtResource("5_l38ul")
+
+[node name="OfficeComputerKeyboard" type="MeshInstance3D" parent="Cubicles/Cubicle 2"]
+transform = Transform3D(0.0207679, 0, 0.999784, 0, 1, 0, -0.999784, 0, 0.0207679, 0.55223, 0.955981, -5.23011)
+mesh = ExtResource("6_67g1t")
+
+[node name="OfficeComputerMouse" type="MeshInstance3D" parent="Cubicles/Cubicle 2"]
+transform = Transform3D(0.0668138, 0, 0.997765, 0, 1, 0, -0.997765, 0, 0.0668138, 0.585711, 0.95515, -5.59147)
+mesh = ExtResource("7_bfc6p")
+
+[node name="Cubicle 3" type="Node3D" parent="Cubicles"]
+
+[node name="OfficeWallSmall6" type="MeshInstance3D" parent="Cubicles/Cubicle 3"]
+transform = Transform3D(1.34388, 0, 0, 0, 1, 0, -3.55271e-15, 0, 1, 0, 0, -6.9173)
+mesh = ExtResource("2_6d3ep")
+skeleton = NodePath("../../..")
+
+[node name="OfficeWallSmall8" type="MeshInstance3D" parent="Cubicles/Cubicle 3"]
+transform = Transform3D(1.34388, 0, 0, 0, 1, 0, -3.55271e-15, 0, 1, 0, 0, -9.92104)
+mesh = ExtResource("2_6d3ep")
+skeleton = NodePath("../../..")
+
+[node name="OfficeWallSmall7" type="MeshInstance3D" parent="Cubicles/Cubicle 3"]
+transform = Transform3D(-6.55845e-08, 0, 1, 0, 1, 0, -1.5004, 0, -4.37114e-08, -1.31067e-07, 0, -6.99847)
+mesh = ExtResource("2_6d3ep")
+skeleton = NodePath("../../..")
+
+[node name="OfficeOfficeDesk6" type="MeshInstance3D" parent="Cubicles/Cubicle 3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.395937, 0, -8.22005)
+mesh = ExtResource("3_5nv0p")
+skeleton = NodePath("../../..")
+
+[node name="Office Chair" type="Node3D" parent="."]
+transform = Transform3D(0.604585, 0, -0.79654, 0, 1, 0, 0.79654, 0, 0.604585, 1.15417, 0, -5.52976)
+
+[node name="OfficeChairOfficeBottom" type="MeshInstance3D" parent="Office Chair"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0264187, 0.0176493, -0.000298001)
+mesh = ExtResource("8_60ajx")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeChairOfficeBaseA" type="MeshInstance3D" parent="Office Chair"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0266988, 0.0176493, -0.00213812)
+mesh = ExtResource("9_h420i")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeChairOfficeWheel" type="MeshInstance3D" parent="Office Chair"]
+transform = Transform3D(0.974272, 0, 0.225376, 0, 1, 0, -0.225376, 0, 0.974272, 0.0252004, 0.0609035, 0.358108)
+mesh = ExtResource("10_1rtu8")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeChairOfficeWheel2" type="MeshInstance3D" parent="Office Chair"]
+transform = Transform3D(0.207348, 0, 0.978267, 0, 1, 0, -0.978267, 0, 0.207348, 0.366711, 0.0561785, 0.109855)
+mesh = ExtResource("10_1rtu8")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeChairOfficeWheel3" type="MeshInstance3D" parent="Office Chair"]
+transform = Transform3D(0.786137, 0, -0.618052, 0, 1, 0, 0.618052, 0, 0.786137, 0.238698, 0.0602372, -0.292051)
+mesh = ExtResource("10_1rtu8")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeChairOfficeWheel4" type="MeshInstance3D" parent="Office Chair"]
+transform = Transform3D(0.787602, 0, 0.616184, 0, 1, 0, -0.616184, 0, 0.787602, -0.185614, 0.0579511, -0.290636)
+mesh = ExtResource("10_1rtu8")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeChairOfficeWheel5" type="MeshInstance3D" parent="Office Chair"]
+transform = Transform3D(0.552446, 0, 0.833548, 0, 1, 0, -0.833548, 0, 0.552446, -0.316546, 0.0596402, 0.110727)
+mesh = ExtResource("10_1rtu8")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
