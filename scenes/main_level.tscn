@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://m8x7hr1574di"]
+[gd_scene load_steps=13 format=3 uid="uid://m8x7hr1574di"]
 
 [ext_resource type="ArrayMesh" uid="uid://leh6ovckg0jo" path="res://assets/office/office_Floor.res" id="1_eptkj"]
 [ext_resource type="ArrayMesh" uid="uid://8etpjcuylarp" path="res://assets/office/office_Wall_Small.res" id="2_6d3ep"]
@@ -10,10 +10,15 @@
 [ext_resource type="ArrayMesh" uid="uid://dfaoq4nk7jcft" path="res://assets/office/office_Chair_Office_Bottom.res" id="8_60ajx"]
 [ext_resource type="ArrayMesh" uid="uid://dq0ahk4agehf5" path="res://assets/office/office_Chair_Office_Base_A.res" id="9_h420i"]
 [ext_resource type="ArrayMesh" uid="uid://6g8taxgj5mgf" path="res://assets/office/office_Chair_Office_Wheel.res" id="10_1rtu8"]
+[ext_resource type="PackedScene" uid="uid://chb1bxccuv40w" path="res://scenes/player.tscn" id="11_lu6gu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_62yx5"]
+size = Vector3(8.01367, 0.227814, 15.9942)
 
 [node name="MainLevel" type="Node3D"]
 
-[node name="Floor" type="Node3D" parent="."]
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00327063, -0.0109878, 0.0013783)
 
 [node name="OfficeFloor" type="MeshInstance3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
@@ -206,6 +211,10 @@ mesh = ExtResource("1_eptkj")
 skeleton = NodePath("../..")
 metadata/_edit_lock_ = true
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00292969, -0.102682, -4.01109)
+shape = SubResource("BoxShape3D_62yx5")
+
 [node name="Cubicles" type="Node3D" parent="."]
 
 [node name="Cubicle 1" type="Node3D" parent="Cubicles"]
@@ -324,3 +333,6 @@ transform = Transform3D(0.552446, 0, 0.833548, 0, 1, 0, -0.833548, 0, 0.552446, 
 mesh = ExtResource("10_1rtu8")
 skeleton = NodePath("../..")
 metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("11_lu6gu")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 3.1139, 0, -5.68953)
