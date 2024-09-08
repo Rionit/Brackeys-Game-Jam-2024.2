@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2ujxgqq26xy3"]
+
+[ext_resource type="ArrayMesh" uid="uid://qfqmm30las36" path="res://assets/office/office_Computer_Monitor.res" id="1_qslqy"]
+[ext_resource type="PackedScene" uid="uid://jhkdbdb55v8p" path="res://scenes/computer_os.tscn" id="2_tcf87"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5i4y7"]
+viewport_path = NodePath("ComputerScreen/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wh4w6"]
+viewport_path = NodePath("ComputerScreen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ts1cp"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_5i4y7")
+emission_enabled = true
+emission_texture = SubResource("ViewportTexture_wh4w6")
+
+[sub_resource type="QuadMesh" id="QuadMesh_wnrpr"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_ts1cp")
+
+[node name="Interactable Monitor" type="Node3D"]
+
+[node name="OfficeComputerMonitor" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.000296749, 0, 1, 0, 1, 0, -1, 0, -0.000296749, 0, 0, 0)
+mesh = ExtResource("1_qslqy")
+skeleton = NodePath("")
+
+[node name="ComputerScreen" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.61732e-08, 0, 1, 0, 0.37, 0, -0.37, 0, -4.37114e-08, 0.031754, 0.337671, 0)
+mesh = SubResource("QuadMesh_wnrpr")
+skeleton = NodePath("")
+
+[node name="SubViewport" type="SubViewport" parent="ComputerScreen"]
+size = Vector2i(1024, 1024)
+
+[node name="ComputerOS" parent="ComputerScreen/SubViewport" instance=ExtResource("2_tcf87")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2

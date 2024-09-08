@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1725809748
+::res://::1725822794
 icon.svg::CompressedTexture2D::1712641266179066697::1725801858::1725801867::1::::<><>::
 ::res://assets/::1725807296
 office.blend::PackedScene::7067239276737624123::1725805914::1725805922::1::::<><>::
@@ -11,7 +11,7 @@ office_palette1.png::CompressedTexture2D::762459829433864580::1725805501::172580
 office_pc1.png::CompressedTexture2D::6992688399248230293::1725805502::1725805503::1::::<><>::
 office_Rug_1.png::CompressedTexture2D::3855187377033583925::1725805502::1725805503::1::::<><>::
 office_tv.png::CompressedTexture2D::7600332180748528335::1725805502::1725805503::1::::<><>::
-::res://assets/office/::1725809388
+::res://assets/office/::1725816068
 office_AirConditioner_A.res::ArrayMesh::4516497092568465876::1725807294::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
 office_AirConditioner_B.res::ArrayMesh::4480475475974000625::1725807294::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
 office_AlcoholDisp_1.res::ArrayMesh::8973145089730477950::1725807295::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
@@ -67,7 +67,7 @@ office_FileCabinet_Small_Drawer_A.res::ArrayMesh::6930578322171463314::172580729
 office_FileCabinet_Small_Drawer_B.res::ArrayMesh::1501959922806714649::1725807295::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
 office_FileCabinet_Standard.res::ArrayMesh::2338413942178255953::1725807295::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
 office_FileCabinet_Standard_Drawer.res::ArrayMesh::4628244454741276740::1725807295::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
-office_Floor.res::ArrayMesh::780815937467306356::1725809388::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
+office_Floor.res::ArrayMesh::780815937467306356::1725816068::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
 office_Food_Bread.res::ArrayMesh::2737322457434983688::1725807294::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
 office_Food_CheeseSlice 2.res::ArrayMesh::4903559470567773525::1725807294::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
 office_Food_CheeseSlice 3.res::ArrayMesh::3713378139706668365::1725807294::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
@@ -172,22 +172,30 @@ office_WhiteBoard_Stand_1.res::ArrayMesh::8558297663498925360::1725807294::0::1:
 office_WhiteBoard_Stand_1_001.res::ArrayMesh::4080809938346062669::1725807296::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
 office_WhiteBoard_Stand_2.res::ArrayMesh::3061928967465571158::1725807294::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
 office_WhiteBoard_Stand_Base.res::ArrayMesh::8458041988793710153::1725807294::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
-::res://scenes/::1725809606
-main_level.tscn::PackedScene::911844620926775106::1725809587::0::1::::<><>::uid://leh6ovckg0jo::::res://assets/office/office_Floor.res<>uid://8etpjcuylarp::::res://assets/office/office_Wall_Small.res<>uid://dvbs3kcndemb7::::res://assets/office/office_Office_Desk_4.res<>uid://qfqmm30las36::::res://assets/office/office_Computer_Monitor.res<>uid://bmuuhhqfg4o3m::::res://assets/office/office_Computer_Case.res<>uid://na8gtruwlj5t::::res://assets/office/office_Computer_Keyboard.res<>uid://bdn6yffewpeyo::::res://assets/office/office_Computer_Mouse.res<>uid://dfaoq4nk7jcft::::res://assets/office/office_Chair_Office_Bottom.res<>uid://dq0ahk4agehf5::::res://assets/office/office_Chair_Office_Base_A.res<>uid://6g8taxgj5mgf::::res://assets/office/office_Chair_Office_Wheel.res<>uid://chb1bxccuv40w::::res://scenes/player.tscn
-player.tscn::PackedScene::5267809289457441028::1725809606::0::1::::<><>::res://scripts/player.gd<>res://scripts/HeadMovement.gd<>uid://cdv17wckh7ua6::::res://scenes/shakeable_camera.tscn<>res://scripts/StateMachine.gd<>res://scripts/states/PlayerIdle.gd<>res://scripts/states/PlayerWalk.gd
-shakeable_camera.tscn::PackedScene::5028396777420740767::1725809587::0::1::::<><>::res://scripts/ShakeableCamera.gd
-::res://scripts/::1725809406
+::res://images/::1725823974
+OS_cross.png::CompressedTexture2D::935499906066790132::1725823974::1725823975::1::::<><>::
+OS_window_texture.png::CompressedTexture2D::3973385843474244851::1725823006::1725823008::1::::<><>::
+::res://scenes/::1725823836
+computer_os.tscn::PackedScene::646762821574582645::1725823836::0::1::::<><>::uid://dwkh46x5pfg4v::::res://scenes/OS_window_bg.tscn<>uid://nlfsucoxd03q::::res://images/OS_cross.png
+cubicle.tscn::PackedScene::3500866926042231340::1725823836::0::1::::<><>::uid://8etpjcuylarp::::res://assets/office/office_Wall_Small.res<>uid://dvbs3kcndemb7::::res://assets/office/office_Office_Desk_4.res<>uid://qfqmm30las36::::res://assets/office/office_Computer_Monitor.res<>uid://bmuuhhqfg4o3m::::res://assets/office/office_Computer_Case.res<>uid://na8gtruwlj5t::::res://assets/office/office_Computer_Keyboard.res<>uid://bdn6yffewpeyo::::res://assets/office/office_Computer_Mouse.res
+interactable_monitor.tscn::PackedScene::6709815567510248016::1725823836::0::1::::<><>::uid://qfqmm30las36::::res://assets/office/office_Computer_Monitor.res<>uid://jhkdbdb55v8p::::res://scenes/computer_os.tscn
+main_cubicle.tscn::PackedScene::7178153051656226026::1725823836::0::1::::<><>::uid://8etpjcuylarp::::res://assets/office/office_Wall_Small.res<>uid://dvbs3kcndemb7::::res://assets/office/office_Office_Desk_4.res<>uid://c2ujxgqq26xy3::::res://scenes/interactable_monitor.tscn<>uid://bmuuhhqfg4o3m::::res://assets/office/office_Computer_Case.res<>uid://na8gtruwlj5t::::res://assets/office/office_Computer_Keyboard.res<>uid://bdn6yffewpeyo::::res://assets/office/office_Computer_Mouse.res
+main_level.tscn::PackedScene::911844620926775106::1725823836::0::1::::<><>::uid://leh6ovckg0jo::::res://assets/office/office_Floor.res<>uid://bp431cn4s2tpk::::res://scenes/cubicle.tscn<>uid://dajfequ5nusk5::::res://scenes/main_cubicle.tscn<>uid://dfaoq4nk7jcft::::res://assets/office/office_Chair_Office_Bottom.res<>uid://dq0ahk4agehf5::::res://assets/office/office_Chair_Office_Base_A.res<>uid://6g8taxgj5mgf::::res://assets/office/office_Chair_Office_Wheel.res<>uid://chb1bxccuv40w::::res://scenes/player.tscn
+player.tscn::PackedScene::5267809289457441028::1725823836::0::1::::<><>::res://scripts/player.gd<>res://scripts/HeadMovement.gd<>uid://cdv17wckh7ua6::::res://scenes/shakeable_camera.tscn<>res://scripts/StateMachine.gd<>res://scripts/states/PlayerIdle.gd<>res://scripts/states/PlayerWalk.gd
+OS_window_bg.tscn::PackedScene::8724538860766888863::1725823523::0::1::::<><>::uid://bwu0c4qh8cmb8::::res://images/OS_window_texture.png
+shakeable_camera.tscn::PackedScene::5028396777420740767::1725823836::0::1::::<><>::res://scripts/ShakeableCamera.gd
+::res://scripts/::1725815170
 HeadMovement.gd::GDScript::-1::1725808962::0::1::::HeadMovement<>Node3D<>::
 player.gd::GDScript::-1::1725808618::0::1::::<>CharacterBody3D<>::
 ShakeableCamera.gd::GDScript::-1::1725808681::0::1::::<>Area3D<>::
 StateMachine.gd::GDScript::-1::1725809406::0::1::::<>Node<>::
-::res://scripts/states/::1725809376
+::res://scripts/states/::1725809897
 PlayerCrouch.gd::GDScript::-1::1725809376::0::1::::PlayerCrouch<>PlayerState<>::
-PlayerIdle.gd::GDScript::-1::1725809376::0::1::::PlayerIdle<>PlayerState<>::
+PlayerIdle.gd::GDScript::-1::1725809824::0::1::::PlayerIdle<>PlayerState<>::
 PlayerJump.gd::GDScript::-1::1725809376::0::1::::PlayerJump<>PlayerState<>::
 PlayerMidAir.gd::GDScript::-1::1725809376::0::1::::PlayerMidAir<>PlayerState<>::
 PlayerSlide.gd::GDScript::-1::1725809376::0::1::::PlayerSlide<>PlayerState<>::
 PlayerSprint.gd::GDScript::-1::1725809376::0::1::::PlayerSprint<>PlayerState<>::
 PlayerState.gd::GDScript::-1::1725809376::0::1::::PlayerState<>State<>::
-PlayerWalk.gd::GDScript::-1::1725809376::0::1::::PlayerWalk<>PlayerState<>::
+PlayerWalk.gd::GDScript::-1::1725809897::0::1::::PlayerWalk<>PlayerState<>::
 State.gd::GDScript::-1::1725809376::0::1::::State<>Node<>::

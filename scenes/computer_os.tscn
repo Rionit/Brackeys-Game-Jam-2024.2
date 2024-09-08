@@ -1,0 +1,225 @@
+[gd_scene load_steps=5 format=3 uid="uid://jhkdbdb55v8p"]
+
+[ext_resource type="PackedScene" uid="uid://dwkh46x5pfg4v" path="res://scenes/OS_window_bg.tscn" id="1_xj25n"]
+[ext_resource type="Texture2D" uid="uid://nlfsucoxd03q" path="res://images/OS_cross.png" id="2_j8xos"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l8p0k"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0.0980392, 0.0980392, 0.0980392, 0.117647)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jbp4e"]
+font_size = 80
+font_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0.0980392, 0.0980392, 0.0980392, 0.117647)
+
+[node name="ComputerOS" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1024.0
+offset_bottom = 1024.0
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0110876, 0.0110876, 0.0110876, 1)
+
+[node name="TaskBar" parent="." instance=ExtResource("1_xj25n")]
+layout_mode = 1
+offset_top = -48.0
+
+[node name="TexTune AI Trainer" parent="." instance=ExtResource("1_xj25n")]
+visible = false
+layout_mode = 1
+anchors_preset = 9
+anchor_top = 0.0
+anchor_right = 0.0
+offset_top = 0.0
+offset_right = 1024.0
+offset_bottom = -48.0
+grow_horizontal = 1
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TexTune AI Trainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TexTune AI Trainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TopBar" parent="TexTune AI Trainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_xj25n")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TexTune AI Trainer/VBoxContainer/HBoxContainer/TopBar"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -24.0
+offset_right = 10.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "TextTune AI Trainer"
+label_settings = SubResource("LabelSettings_l8p0k")
+vertical_alignment = 1
+
+[node name="Cross" type="NinePatchRect" parent="TexTune AI Trainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("2_j8xos")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="TexTune AI Trainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="TexTune AI Trainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TexTune AI Trainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[color=black]hello this is a test aaaaaaaaaaaaaaaa
+I hope this works
+cause otherwise
+it
+sucks really bad [/color]"
+scroll_following = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="TexTune AI Trainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="TexTune AI Trainer/VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="TexTune AI Trainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+placeholder_text = "Rewrite the text you see on the upper half of the screen in this box."
+wrap_mode = 1
+
+[node name="TexTune AI Trainer2" parent="." instance=ExtResource("1_xj25n")]
+layout_mode = 1
+anchors_preset = 9
+anchor_top = 0.0
+anchor_right = 0.0
+offset_left = 147.0
+offset_top = 203.0
+offset_right = 835.0
+offset_bottom = -483.0
+grow_horizontal = 1
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TexTune AI Trainer2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TexTune AI Trainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TopBar" parent="TexTune AI Trainer2/VBoxContainer/HBoxContainer" instance=ExtResource("1_xj25n")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TexTune AI Trainer2/VBoxContainer/HBoxContainer/TopBar"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -24.0
+offset_right = 10.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "The Calculator"
+label_settings = SubResource("LabelSettings_l8p0k")
+vertical_alignment = 1
+
+[node name="Cross" type="NinePatchRect" parent="TexTune AI Trainer2/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("2_j8xos")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="TexTune AI Trainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="TexTune AI Trainer2/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="TexTune AI Trainer2/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 1
+text = "5540*10015645"
+label_settings = SubResource("LabelSettings_jbp4e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="TexTune AI Trainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="TexTune AI Trainer2/VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="TexTune AI Trainer2/VBoxContainer/MarginContainer2/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+placeholder_text = "twenty one"
+wrap_mode = 1

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://q1hgq0wrwxci"]
+
+[ext_resource type="ArrayMesh" uid="uid://dx4lbbb7p32t2" path="res://assets/office/office_Wall_Standard.res" id="1_cj0tk"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wehgg"]
+points = PackedVector3Array(0, 0, -0.199999, 0, 0, 1.3262e-06, 0, 3, -0.199999, 2, 0, -0.199999, 2, 0, 1.3262e-06, 0, 3, 1.3262e-06, 2, 3, -0.199999, 2, 3, 1.3262e-06)
+
+[node name="OfficeWallStandard" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99761, -0.00659446, 4.17752)
+mesh = ExtResource("1_cj0tk")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_wehgg")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwkh46x5pfg4v"]
+
+[ext_resource type="Texture2D" uid="uid://bwu0c4qh8cmb8" path="res://images/OS_window_texture.png" id="1_d333g"]
+
+[node name="NinePatchRect" type="NinePatchRect"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -39.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_d333g")
+region_rect = Rect2(0, 0, 16, 16)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 6
+patch_margin_bottom = 6
