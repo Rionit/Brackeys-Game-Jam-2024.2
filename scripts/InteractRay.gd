@@ -3,7 +3,7 @@ extends RayCast3D
 var previous_interactable: Interactable = null
 @onready var prompt: Label = $UI/Prompt
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	prompt.text = ""
 
 	if is_colliding():
