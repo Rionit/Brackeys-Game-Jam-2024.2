@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2ujxgqq26xy3"]
+[gd_scene load_steps=9 format=3 uid="uid://c2ujxgqq26xy3"]
 
+[ext_resource type="Script" path="res://scripts/InteractableMonitor.gd" id="1_5m844"]
 [ext_resource type="ArrayMesh" uid="uid://qfqmm30las36" path="res://assets/office/office_Computer_Monitor.res" id="1_qslqy"]
 [ext_resource type="PackedScene" uid="uid://jhkdbdb55v8p" path="res://scenes/computer_os.tscn" id="2_tcf87"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_5i4y7"]
-viewport_path = NodePath("ComputerScreen/SubViewport")
+viewport_path = NodePath("Display/SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_wh4w6"]
-viewport_path = NodePath("ComputerScreen/SubViewport")
+viewport_path = NodePath("Display/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ts1cp"]
 resource_local_to_scene = true
@@ -19,22 +20,26 @@ emission_texture = SubResource("ViewportTexture_wh4w6")
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_ts1cp")
 
-[node name="Interactable Monitor" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ihyfn"]
+size = Vector3(0.0793457, 0.400726, 0.399902)
 
-[node name="OfficeComputerMonitor" type="MeshInstance3D" parent="."]
+[node name="Interactable Monitor" type="Node3D"]
+script = ExtResource("1_5m844")
+
+[node name="OfficeComputer" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.000296749, 0, 1, 0, 1, 0, -1, 0, -0.000296749, 0, 0, 0)
 mesh = ExtResource("1_qslqy")
 skeleton = NodePath("")
 
-[node name="ComputerScreen" type="MeshInstance3D" parent="."]
+[node name="Display" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1.61732e-08, 0, 1, 0, 0.37, 0, -0.37, 0, -4.37114e-08, 0.031754, 0.337671, 0)
 mesh = SubResource("QuadMesh_wnrpr")
 skeleton = NodePath("")
 
-[node name="SubViewport" type="SubViewport" parent="ComputerScreen"]
+[node name="SubViewport" type="SubViewport" parent="Display"]
 size = Vector2i(1024, 1024)
 
-[node name="ComputerOS" parent="ComputerScreen/SubViewport" instance=ExtResource("2_tcf87")]
+[node name="ComputerOS" parent="Display/SubViewport" instance=ExtResource("2_tcf87")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -42,3 +47,9 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Area" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000854492, 0.336655, 0.000244141)
+shape = SubResource("BoxShape3D_ihyfn")

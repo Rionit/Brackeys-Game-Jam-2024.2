@@ -11,6 +11,10 @@ var gravity = 9.8
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+func _input(event: InputEvent) -> void:
+	if event.is_action("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 func _unhandled_input(event):
 	handle_mouse_input(event)
 
