@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://chb1bxccuv40w"]
+[gd_scene load_steps=13 format=3 uid="uid://chb1bxccuv40w"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_fj2g3"]
 [ext_resource type="Script" path="res://scripts/PlayerExports.gd" id="1_um5jx"]
@@ -8,6 +8,9 @@
 [ext_resource type="Script" path="res://scripts/StateMachine.gd" id="4_vqr78"]
 [ext_resource type="Script" path="res://scripts/states/PlayerIdle.gd" id="5_8u1ht"]
 [ext_resource type="Script" path="res://scripts/states/PlayerWalk.gd" id="6_q78wg"]
+[ext_resource type="Texture2D" uid="uid://ygecuq7k83kn" path="res://images/anger_stress_bar_bg.png" id="6_sia2y"]
+[ext_resource type="Texture2D" uid="uid://d07pe7sbiu84o" path="res://images/anger_stress_bar_over.png" id="7_f2vpr"]
+[ext_resource type="Script" path="res://scripts/AngerStressBar.gd" id="8_4ikgm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vw6b"]
 
@@ -50,6 +53,31 @@ text = "Message
 [key]"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CharacterBody3D/Head/InteractRay/UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CharacterBody3D/Head/InteractRay/UI/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 300)
+layout_mode = 2
+size_flags_horizontal = 0
+value = 67.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("6_sia2y")
+texture_progress = ExtResource("7_f2vpr")
+tint_under = Color(0.0807833, 0.0807833, 0.0807833, 1)
+tint_progress = Color(0.69, 0, 0, 1)
+script = ExtResource("8_4ikgm")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_vqr78")
