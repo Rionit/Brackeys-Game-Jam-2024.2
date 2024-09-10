@@ -28,4 +28,3 @@ func transition_camera3D(from: Camera3D, to: Camera3D, duration: float = 1.0) ->
 	
 	transitioning = false
 	to.current = true
-	print("finished")

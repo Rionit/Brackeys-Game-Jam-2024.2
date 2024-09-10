@@ -9,7 +9,7 @@ func _physics_process(delta: float) -> void:
 	if is_colliding():
 		var detected = get_collider()
 
-		if detected is Interactable:
+		if detected is Interactable and !Consts.interacting:
 			prompt.text = detected.get_prompt()
 			
 			# Set highlight on the currently detected interactable

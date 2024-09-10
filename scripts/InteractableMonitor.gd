@@ -47,6 +47,7 @@ func _unhandled_input(event):
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") and interacting:
+		Consts.interacting = false
 		interacting = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		CameraTransition.transition_camera3D(camera, player.camera, 0.8)
@@ -124,6 +125,7 @@ func set_highlighted(value: bool) -> void:
 
 func interact(body):
 	player = body
+	Consts.interacting = true
 	interacting = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	CameraTransition.transition_camera3D(player.camera, camera, 0.7)
