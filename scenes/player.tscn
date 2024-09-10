@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://chb1bxccuv40w"]
+[gd_scene load_steps=10 format=3 uid="uid://chb1bxccuv40w"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_fj2g3"]
+[ext_resource type="Script" path="res://scripts/PlayerExports.gd" id="1_um5jx"]
 [ext_resource type="Script" path="res://scripts/HeadMovement.gd" id="2_i222c"]
 [ext_resource type="PackedScene" uid="uid://cdv17wckh7ua6" path="res://scenes/shakeable_camera.tscn" id="2_vdc22"]
+[ext_resource type="Script" path="res://scripts/InteractRay.gd" id="4_ndivs"]
 [ext_resource type="Script" path="res://scripts/StateMachine.gd" id="4_vqr78"]
 [ext_resource type="Script" path="res://scripts/states/PlayerIdle.gd" id="5_8u1ht"]
 [ext_resource type="Script" path="res://scripts/states/PlayerWalk.gd" id="6_q78wg"]
@@ -10,6 +12,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vw6b"]
 
 [node name="Player" type="Node3D"]
+script = ExtResource("1_um5jx")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 script = ExtResource("1_fj2g3")
@@ -23,6 +26,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56425, -0.470243)
 script = ExtResource("2_i222c")
 
 [node name="ShakeableCamera" parent="CharacterBody3D/Head" instance=ExtResource("2_vdc22")]
+
+[node name="InteractRay" type="RayCast3D" parent="CharacterBody3D/Head"]
+target_position = Vector3(0, 0, -3)
+script = ExtResource("4_ndivs")
+
+[node name="UI" type="CanvasLayer" parent="CharacterBody3D/Head/InteractRay"]
+
+[node name="Prompt" type="Label" parent="CharacterBody3D/Head/InteractRay/UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.5
+offset_top = -24.5
+offset_right = 33.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+text = "Message
+[key]"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_vqr78")
