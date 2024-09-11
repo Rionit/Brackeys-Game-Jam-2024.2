@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm35c4frwby5n"]
+
+[ext_resource type="ArrayMesh" uid="uid://dfaoq4nk7jcft" path="res://assets/office/office_Chair_Office_Bottom.res" id="1_y8yyl"]
+[ext_resource type="ArrayMesh" uid="uid://dq0ahk4agehf5" path="res://assets/office/office_Chair_Office_Base_A.res" id="2_siuxd"]
+[ext_resource type="ArrayMesh" uid="uid://6g8taxgj5mgf" path="res://assets/office/office_Chair_Office_Wheel.res" id="3_bedty"]
+
+[node name="Office Chair" type="Node3D"]
+transform = Transform3D(0.604585, 0, -0.79654, 0, 1, 0, 0.79654, 0, 0.604585, 1.27333, 0, -1.57321)
+
+[node name="OfficeChairOfficeBottom" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0264187, 0.0176493, -0.000298001)
+mesh = ExtResource("1_y8yyl")
+skeleton = NodePath("../../../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeChairOfficeBaseA" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0266988, 0.0176493, -0.00213812)
+mesh = ExtResource("2_siuxd")
+skeleton = NodePath("../../../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeChairOfficeWheel" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.974272, 0, 0.225376, 0, 1, 0, -0.225376, 0, 0.974272, 0.0252004, 0.0609035, 0.358108)
+mesh = ExtResource("3_bedty")
+skeleton = NodePath("../../../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeChairOfficeWheel2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.207348, 0, 0.978267, 0, 1, 0, -0.978267, 0, 0.207348, 0.366711, 0.0561785, 0.109855)
+mesh = ExtResource("3_bedty")
+skeleton = NodePath("../../../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeChairOfficeWheel3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.786137, 0, -0.618052, 0, 1, 0, 0.618052, 0, 0.786137, 0.238698, 0.0602372, -0.292051)
+mesh = ExtResource("3_bedty")
+skeleton = NodePath("../../../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeChairOfficeWheel4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.787602, 0, 0.616184, 0, 1, 0, -0.616184, 0, 0.787602, -0.185614, 0.0579511, -0.290636)
+mesh = ExtResource("3_bedty")
+skeleton = NodePath("../../../..")
+metadata/_edit_lock_ = true
+
+[node name="OfficeChairOfficeWheel5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.552446, 0, 0.833548, 0, 1, 0, -0.833548, 0, 0.552446, -0.316546, 0.0596402, 0.110727)
+mesh = ExtResource("3_bedty")
+skeleton = NodePath("../../../..")
+metadata/_edit_lock_ = true
