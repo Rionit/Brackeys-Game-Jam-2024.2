@@ -9,10 +9,30 @@ var bbcode_regex = RegEx.new()
 var last_text_length := 0
 var current_text_length := 0
 
+# Random words for random text
+var lorem_words = ["lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit", 
+					"sed", "do", "eiusmod", "tempor", "incididunt", "ut", "labore", "et", "dolore", 
+					"magna", "aliqua", "burger", "skibidi", "toilet", "chilli", "king", "gizzard",
+					"and", "the", "lizard", "wizard", "is", "my", "most", "favorite", "band",
+					"swear", "to", "God", "beans", "taste", "like", "so", "yummy", "hahaha",
+					"Cars 2", "magenta", "mountain", "this", "thing", "oh yeah", "game jam go brr",
+					"monster", "hyper", "ultra", "max", "min", "new", "radical", "asdfg", "qwerty", 
+					"wasd", "rock", "roll", "fish", "n", "chips", "goober", "goo", "pee", "poo"]
+
+# Function to generate random text with variable length
+func generate_random_text(min_length: int, max_length: int) -> String:
+	var random_text = ""
+	var word_count = randi_range(min_length, max_length)  # Randomize number of words
+	for i in range(word_count):
+		var random_word = lorem_words[randi_range(0, lorem_words.size() - 1)]
+		random_text += random_word + " "
+	return random_text.strip_edges()  # Remove trailing space
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	visible = false
 	bbcode_regex.compile(r"\[/?[a-z]+[^\]]*\]")
+	reset()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -34,7 +54,7 @@ func remove_bbcode(text: String) -> String:
 func reset() -> String:
 	user_text_colored.text = ""
 	user_text_input.text = ""
-	original_text.text = "random new text" # TODO: Randomize the text
+	original_text.text = generate_random_text(5, 20)
 	GameManager.decrease_stress(Consts.tex_win)
 	return ""
 
