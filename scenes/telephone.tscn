@@ -7,6 +7,33 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_h3eve"]
 size = Vector3(0.315948, 0.0909119, 0.211182)
 
+[sub_resource type="Animation" id="Animation_u7mck"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OfficePhoneB2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0315883, 0.0512399, 0.054376)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OfficePhoneB2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.46647, -1.5784, -0.0200069)]
+}
+
 [sub_resource type="Animation" id="Animation_lhdln"]
 resource_name = "pick_up"
 length = 5.0
@@ -35,33 +62,6 @@ tracks/1/keys = {
 "values": [Vector3(1.46647, -1.5784, -0.0200069), Vector3(-0.18343, -0.307802, 0.406064), Vector3(-0.18343, -0.352971, 0.406064), Vector3(-0.149637, -0.36804, 0.496895), Vector3(-0.149637, -0.36804, 0.496895), Vector3(1.46647, -1.5784, -0.0200069)]
 }
 
-[sub_resource type="Animation" id="Animation_u7mck"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("OfficePhoneB2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.0315883, 0.0512399, 0.054376)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("OfficePhoneB2:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1.46647, -1.5784, -0.0200069)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p1t0l"]
 _data = {
 "RESET": SubResource("Animation_u7mck"),
@@ -79,7 +79,7 @@ mesh = ExtResource("1_sk3xd")
 skeleton = NodePath("../../../Cubicle 1")
 
 [node name="OfficePhoneB2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0122896, -0.994487, -0.104138, -0.0020834, 0.10412, -0.994563, 0.999922, 0.0124398, -0.000792318, 0.0315883, 0.0512399, 0.054376)
+transform = Transform3D(0.0122941, -0.994487, -0.104134, -0.00208332, 0.104116, -0.994563, 0.999922, 0.0124442, -0.000791819, 0.0315883, 0.0512399, 0.054376)
 mesh = ExtResource("2_1naka")
 skeleton = NodePath("../../../Cubicle 1")
 

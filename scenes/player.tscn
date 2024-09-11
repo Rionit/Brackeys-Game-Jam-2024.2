@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://chb1bxccuv40w"]
+[gd_scene load_steps=15 format=3 uid="uid://chb1bxccuv40w"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_fj2g3"]
 [ext_resource type="Script" path="res://scripts/PlayerExports.gd" id="1_um5jx"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://ygecuq7k83kn" path="res://images/anger_stress_bar_bg.png" id="6_sia2y"]
 [ext_resource type="Texture2D" uid="uid://d07pe7sbiu84o" path="res://images/anger_stress_bar_over.png" id="7_f2vpr"]
 [ext_resource type="Script" path="res://scripts/AngerStressBar.gd" id="8_4ikgm"]
+[ext_resource type="Texture2D" uid="uid://ip62s210j1ic" path="res://images/veins_overlay.png" id="9_lumxb"]
+[ext_resource type="Script" path="res://scripts/BloodOverlay.gd" id="10_58s8s"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vw6b"]
 
@@ -78,6 +80,16 @@ texture_progress = ExtResource("7_f2vpr")
 tint_under = Color(0.0807833, 0.0807833, 0.0807833, 1)
 tint_progress = Color(0.69, 0, 0, 1)
 script = ExtResource("8_4ikgm")
+
+[node name="BloodOverlay" type="TextureRect" parent="CharacterBody3D/Head/InteractRay/UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_lumxb")
+expand_mode = 2
+script = ExtResource("10_58s8s")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_vqr78")
