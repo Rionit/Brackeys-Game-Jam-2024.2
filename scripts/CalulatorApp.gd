@@ -11,24 +11,24 @@ func _ready() -> void:
 	visible = false
 	reset()
 
-func evaluate_equation(equation: String) -> float:
+func evaluate_equation(_equation: String) -> float:
 	# Use the built-in 'eval()' function to evaluate the string equation
 	var expression = Expression.new()
-	expression.parse(equation)
+	expression.parse(_equation)
 	var result = expression.execute()
 	return result
 
 func generate_equation(difficulty: int) -> String:
 	var operators = ["+", "-", "*"]
-	var equation = str(randi_range(1, 10 * difficulty))  # Start with a random number, range based on difficulty
+	var _equation = str(randi_range(1, 10 * difficulty))  # Start with a random number, range based on difficulty
 	
 	# Add random operations and numbers based on the difficulty level
 	for i in range(difficulty):
 		var operator = operators[randi() % operators.size()]  # Randomly select an operator
 		var number = randi_range(1, 10 * difficulty)  # Random number
-		equation += " " + operator + " " + str(number)
+		_equation += " " + operator + " " + str(number)
 		
-	return equation
+	return _equation
 
 func reset():
 	user_input.text = ""
@@ -40,9 +40,10 @@ func check_user():
 	var user_answer = user_input.text
 	if str(answer) == user_answer:
 		print("yippeee")
+		GameManager.decrease_stress(Consts.cal_good)
 	else:
 		print("hahahah dumbass")
-		Consts.stress_level += 10
+		GameManager.increase_stress(Consts.cal_bad)
 	reset()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

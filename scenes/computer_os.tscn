@@ -183,9 +183,10 @@ layout_mode = 2
 
 [node name="OriginalText" type="RichTextLabel" parent="TexTune AI Trainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
-text = "[color=black]hello this is a test [/color]"
+text = "hello this is a test"
 scroll_following = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="TexTune AI Trainer/VBoxContainer"]
