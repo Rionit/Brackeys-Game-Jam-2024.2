@@ -58,6 +58,10 @@ func reset() -> String:
 	GameManager.decrease_stress(Consts.tex_win)
 	return ""
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		user_text_input.release_focus()
+
 func process_text(unprocessed: String) -> String:
 	var original = remove_bbcode(original_text.text)
 	var processed := ""

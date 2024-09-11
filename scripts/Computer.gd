@@ -1,8 +1,5 @@
-class_name Interactable
-extends Node3D
-
-@export var prompt_message = "Interact"
-@export var prompt_action = "interact"
+extends Interactable
+class_name Computer
 
 # Used for checking if the mouse is inside the Area3D.
 var is_mouse_inside = false
@@ -11,16 +8,9 @@ var last_event_pos2D = null
 # The time of the last event in seconds since engine start.
 var last_event_time: float = -1.0
 
-@onready var office_computer: MeshInstance3D = $OfficeComputer
 @onready var node_viewport = $Display/SubViewport
 @onready var node_quad = $Display
 @onready var node_area = $Area
-@onready var camera: Camera3D = $Camera
-
-var outline_width = 0.0
-var highlighted := false
-var interacting := false
-var player = null
 
 func _ready():
 	node_area.mouse_entered.connect(_mouse_entered_area)
@@ -32,9 +22,6 @@ func _mouse_entered_area():
 	
 func _mouse_exited_area():
 	is_mouse_inside = false
-
-func _physics_process(_delta: float) -> void:
-	office_computer.get_active_material(0).next_pass.set_shader_parameter("outline_width", outline_width)
 	
 func _unhandled_input(event):
 	# Check if the event is a non-mouse/non-touch event
@@ -47,10 +34,7 @@ func _unhandled_input(event):
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") and interacting:
-		Consts.interacting = false
-		interacting = false
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		CameraTransition.transition_camera3D(camera, player.camera, 0.8)
+		exit()
 
 func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Vector3, _normal: Vector3, _shape_idx: int):
 	# Get mesh size to detect edges and make conversions. This code only support PlaneMesh and QuadMesh.
@@ -113,26 +97,3 @@ func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Ve
 
 	# Finally, send the processed input event to the viewport.
 	node_viewport.push_input(event)
-
-func set_highlighted(value: bool) -> void:
-	highlighted = value
-	if highlighted:
-		# Add code to visually highlight the object
-		outline_width = 2.0
-	else:
-		# Add code to remove the highlight
-		outline_width = 0.0
-
-func interact(body):
-	player = body
-	Consts.interacting = true
-	interacting = true
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	CameraTransition.transition_camera3D(player.camera, camera, 0.7)
-
-func get_prompt():
-	var key_name = ""
-	for action in InputMap.action_get_events(prompt_action):
-		if action is InputEventKey:
-			key_name = OS.get_keycode_string(action.physical_keycode)
-	return prompt_message + "\n[" + key_name + "]"

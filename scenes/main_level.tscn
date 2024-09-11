@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://m8x7hr1574di"]
+[gd_scene load_steps=46 format=4 uid="uid://m8x7hr1574di"]
 
 [ext_resource type="ArrayMesh" uid="uid://leh6ovckg0jo" path="res://assets/office/office_Floor.res" id="1_eptkj"]
 [ext_resource type="PackedScene" uid="uid://bp431cn4s2tpk" path="res://scenes/cubicle.tscn" id="2_bfrnm"]
@@ -28,9 +28,17 @@
 [ext_resource type="ArrayMesh" uid="uid://b3koax6tqj7ix" path="res://assets/office/office_Office_Files_E.res" id="24_gbwy6"]
 [ext_resource type="ArrayMesh" uid="uid://bs2c781v7gpqr" path="res://assets/office/office_Office_Files_D_Custom.res" id="25_63vkd"]
 [ext_resource type="ArrayMesh" uid="uid://bgeem6lo5y1kr" path="res://assets/office/office_Painting_Small2.res" id="26_hlcha"]
-[ext_resource type="ArrayMesh" uid="uid://cbh34khpprxsu" path="res://assets/office/office_Printer.res" id="29_62rn6"]
 [ext_resource type="ArrayMesh" uid="uid://cwscsh7fwp167" path="res://assets/office/office_Office_Desk_1.res" id="30_5f1yo"]
+[ext_resource type="ArrayMesh" uid="uid://dhc1sratall2r" path="res://assets/office/office_Office_CounterA1.res" id="30_8yr8e"]
 [ext_resource type="ArrayMesh" uid="uid://dw17qtcvqacb7" path="res://assets/office/office_Office_Desk_1_Sep.res" id="31_5a2m7"]
+[ext_resource type="ArrayMesh" uid="uid://c47gicv7rcg3n" path="res://assets/office/office_Office_Counter_Door.res" id="31_jg1u8"]
+[ext_resource type="ArrayMesh" uid="uid://cf436vad7r768" path="res://assets/office/office_Microwave_New.res" id="32_ggdp5"]
+[ext_resource type="ArrayMesh" uid="uid://b36g0pqb6qdmy" path="res://assets/office/office_Microwave_New_B.res" id="33_anlti"]
+[ext_resource type="ArrayMesh" uid="uid://bf3sude475pb" path="res://assets/office/office_Office_Counter_Drawer.res" id="34_335op"]
+[ext_resource type="ArrayMesh" uid="uid://doev56plmmduf" path="res://assets/office/office_Lamp_1.res" id="35_g3elm"]
+[ext_resource type="ArrayMesh" uid="uid://c2nkl30fkswfn" path="res://assets/office/office_Nature_Deco_Bamboo1.res" id="36_0vni8"]
+[ext_resource type="ArrayMesh" uid="uid://bbbag4rbat54u" path="res://assets/office/office_Nature_Deco.res" id="37_irp2j"]
+[ext_resource type="PackedScene" uid="uid://daylvoj8osmbv" path="res://scenes/office_printer.tscn" id="39_kgtl7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_62yx5"]
 size = Vector3(8.01367, 0.227814, 15.9942)
@@ -678,34 +686,123 @@ mesh = SubResource("ArrayMesh_vp84y")
 skeleton = NodePath("../Cubicles/Cubicle main")
 surface_material_override/0 = SubResource("StandardMaterial3D_7dk8k")
 
-[node name="OfficePrinter" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.199298, 0.943719, 1.04921)
-mesh = ExtResource("29_62rn6")
-
-[node name="OfficeOfficeDesk1" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.462581, 0.000237182, 1.06424)
-mesh = ExtResource("30_5f1yo")
-
 [node name="OfficeOfficeDesk1Sep" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.463629, 0.000237182, 1.06337)
 mesh = ExtResource("31_5a2m7")
 
-[node name="OfficeTrashBin" type="MeshInstance3D" parent="."]
+[node name="Kitchen" type="Node" parent="."]
+
+[node name="OfficeOfficeCounterA1" type="MeshInstance3D" parent="Kitchen"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.41438, 0.000237182, -5.33242)
+mesh = ExtResource("30_8yr8e")
+skeleton = NodePath("../../Cubicles")
+
+[node name="OfficeOfficeCounterDoor" type="MeshInstance3D" parent="Kitchen"]
+transform = Transform3D(-4.0432e-08, 0, -1, 0, 1, 0, 0.924976, 0, -4.37114e-08, -1.64982, 0.0524402, -5.83769)
+mesh = ExtResource("31_jg1u8")
+skeleton = NodePath("../../Cubicles")
+
+[node name="OfficeOfficeCounterDoor2" type="MeshInstance3D" parent="Kitchen"]
+transform = Transform3D(4.37114e-08, 0, -1, 0, 1, 0, -1, 0, -4.37114e-08, -1.64982, 0.0524402, -4.82521)
+mesh = ExtResource("31_jg1u8")
+skeleton = NodePath("../../Cubicles")
+
+[node name="OfficeOfficeCounterA2" type="MeshInstance3D" parent="Kitchen"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.41438, 0.000237182, -4.33383)
+mesh = ExtResource("30_8yr8e")
+skeleton = NodePath("../../Cubicles")
+
+[node name="OfficeOfficeCounterA3" type="MeshInstance3D" parent="Kitchen"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.41438, 0.000237182, -3.33888)
+mesh = ExtResource("30_8yr8e")
+skeleton = NodePath("../../Cubicles")
+
+[node name="OfficeOfficeCounterDoor5" type="MeshInstance3D" parent="Kitchen"]
+transform = Transform3D(-4.0432e-08, 0, -1, 0, 1, 0, 0.924976, 0, -4.37114e-08, -1.64982, 0.0524402, -3.84414)
+mesh = ExtResource("31_jg1u8")
+skeleton = NodePath("../../Cubicles")
+
+[node name="OfficeOfficeCounterDoor6" type="MeshInstance3D" parent="Kitchen"]
+transform = Transform3D(4.37114e-08, 0, -1, 0, 1, 0, -1, 0, -4.37114e-08, -1.64982, 0.0524402, -2.83166)
+mesh = ExtResource("31_jg1u8")
+skeleton = NodePath("../../Cubicles")
+
+[node name="OfficeMicrowaveNew" type="MeshInstance3D" parent="Kitchen"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27877, 0.945859, -5.14483)
+mesh = ExtResource("32_ggdp5")
+skeleton = NodePath("../../Cubicles")
+
+[node name="OfficeMicrowaveNewB" type="MeshInstance3D" parent="Kitchen"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.50433, 0.950394, -4.89255)
+mesh = ExtResource("33_anlti")
+skeleton = NodePath("../../Cubicles")
+
+[node name="OfficeOfficeCounterDrawer" type="MeshInstance3D" parent="Kitchen"]
+transform = Transform3D(-1.00164e-07, 0, -1, 0, 1, 0, 2.29149, 0, -4.37114e-08, -1.4179, 0.17805, -4.33755)
+mesh = ExtResource("34_335op")
+skeleton = NodePath("../..")
+
+[node name="OfficeOfficeCounterDrawer2" type="MeshInstance3D" parent="Kitchen"]
+transform = Transform3D(-1.00164e-07, 0, -1, 0, 1, 0, 2.29149, 0, -4.37114e-08, -1.4179, 0.366742, -4.33755)
+mesh = ExtResource("34_335op")
+skeleton = NodePath("../..")
+
+[node name="OfficeOfficeCounterDrawer3" type="MeshInstance3D" parent="Kitchen"]
+transform = Transform3D(-1.00164e-07, 0, -1, 0, 1, 0, 2.29149, 0, -4.37114e-08, -1.4179, 0.556406, -4.33755)
+mesh = ExtResource("34_335op")
+skeleton = NodePath("../..")
+
+[node name="OfficeOfficeCounterDrawer4" type="MeshInstance3D" parent="Kitchen"]
+transform = Transform3D(-1.00164e-07, 0, -1, 0, 1.30235, 0, 2.29149, 0, -4.37114e-08, -1.4179, 0.775285, -4.33755)
+mesh = ExtResource("34_335op")
+skeleton = NodePath("../..")
+
+[node name="OfficeLamp1" type="MeshInstance3D" parent="Kitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32573, 0.000237182, -2.25802)
+mesh = ExtResource("35_g3elm")
+skeleton = NodePath("../..")
+
+[node name="OfficeNatureDecoBamboo1" type="MeshInstance3D" parent="Kitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41036, 0.000237182, -6.64917)
+mesh = ExtResource("36_0vni8")
+skeleton = NodePath("../..")
+
+[node name="OfficeNatureDeco" type="MeshInstance3D" parent="Kitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.40285, 0.000237182, -6.70425)
+mesh = ExtResource("37_irp2j")
+skeleton = NodePath("../..")
+
+[node name="Printer" type="Node" parent="."]
+
+[node name="OfficeOfficeDesk1" type="MeshInstance3D" parent="Printer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.462581, 0.000237182, 1.06424)
+mesh = ExtResource("30_5f1yo")
+skeleton = NodePath("../..")
+
+[node name="OfficeTrashBin" type="MeshInstance3D" parent="Printer"]
 transform = Transform3D(0.996499, 0, 0.0836083, 0, 1, 0, -0.0836083, 0, 0.996499, 0.899447, 0.000237182, 1.17817)
 mesh = ExtResource("6_q0b82")
+skeleton = NodePath("../..")
 
-[node name="OfficePaperStray" type="MeshInstance3D" parent="."]
+[node name="OfficePaperStray" type="MeshInstance3D" parent="Printer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.726263, 0.947519, 1.03735)
 mesh = ExtResource("12_48rqt")
+skeleton = NodePath("../..")
 
-[node name="OfficeOfficeFilesA" type="MeshInstance3D" parent="."]
+[node name="OfficeOfficeFilesA" type="MeshInstance3D" parent="Printer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.723798, 0.963269, 1.04579)
 mesh = ExtResource("4_plrny")
+skeleton = NodePath("../..")
 
-[node name="OfficePaperStray2" type="MeshInstance3D" parent="."]
+[node name="OfficePaperStray2" type="MeshInstance3D" parent="Printer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01899, 0.947519, 1.03735)
 mesh = ExtResource("12_48rqt")
+skeleton = NodePath("../..")
 
-[node name="OfficeOfficeFilesA2" type="MeshInstance3D" parent="."]
+[node name="OfficeOfficeFilesA2" type="MeshInstance3D" parent="Printer"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.01652, 0.963269, 1.04579)
 mesh = ExtResource("4_plrny")
+skeleton = NodePath("../..")
+
+[node name="OfficePrinter" parent="Printer" instance=ExtResource("39_kgtl7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.949596, 1.03156)

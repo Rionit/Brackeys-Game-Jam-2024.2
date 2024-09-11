@@ -30,6 +30,10 @@ func generate_equation(difficulty: int) -> String:
 		
 	return _equation
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		user_input.release_focus()
+
 func reset():
 	user_input.text = ""
 	equation = generate_equation(1)

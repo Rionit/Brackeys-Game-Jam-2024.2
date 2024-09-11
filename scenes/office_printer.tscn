@@ -1,0 +1,126 @@
+[gd_scene load_steps=9 format=3 uid="uid://daylvoj8osmbv"]
+
+[ext_resource type="Script" path="res://scripts/OfficePrinter.gd" id="1_wkyai"]
+[ext_resource type="ArrayMesh" uid="uid://cbh34khpprxsu" path="res://assets/office/office_Printer.res" id="2_n2nfk"]
+[ext_resource type="ArrayMesh" uid="uid://bkw5ku1vgbhsf" path="res://assets/office/office_Office_Files_C.res" id="3_fmua2"]
+[ext_resource type="ArrayMesh" uid="uid://bs2c781v7gpqr" path="res://assets/office/office_Office_Files_D_Custom.res" id="4_yfccw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fqrqj"]
+size = Vector3(0.713867, 0.500244, 0.671875)
+
+[sub_resource type="Animation" id="Animation_vem8l"]
+resource_name = "printing"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PrintedPaper:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.733333, 1.16667, 1.73333, 2.26667, 2.73333, 2.96667, 3.23333, 3.43333, 3.73333, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.603342, -0.00203698, 3.13751), Vector3(0.632788, -0.00220501, 3.13741), Vector3(0.78002, -0.00304517, 3.13687), Vector3(0.71766, -0.00265443, 3.13714), Vector3(0.71766, -0.00265443, 3.13714), Vector3(0.838523, -0.00345828, 3.13657), Vector3(0.906206, -0.00400908, 3.13615), Vector3(0.906206, -0.00400908, 3.13615), Vector3(0.906205, -0.00400908, 2.73579), Vector3(0.479966, -0.345575, 2.73493), Vector3(0.909657, -0.987891, 2.73188), Vector3(0.81056, -0.926152, 3.02299)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PrintedPaper:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.733333, 1.16667, 1.73333, 2.26667, 2.73333, 2.96667, 3.23333, 3.43333, 3.73333, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.000518185, 0.15279, 0.0115941), Vector3(0.00063767, 0.194248, -0.0527182), Vector3(0.000753269, 0.231804, -0.0906797), Vector3(0.000906683, 0.282256, -0.148475), Vector3(0.00104583, 0.328017, -0.200897), Vector3(0.0011643, 0.367266, -0.249057), Vector3(0.0011643, 0.367266, -0.249057), Vector3(0.024, 0.541, -0.222), Vector3(0.084, 0.493, -0.0389999), Vector3(0.249947, 0.493729, 0.4626), Vector3(0.580011, 0.0793342, 0.992875)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PrintedPaper:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0333333, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_8kp7h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PrintedPaper:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.603342, -0.00203698, 3.13751)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PrintedPaper:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PrintedPaper:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_txa45"]
+_data = {
+"RESET": SubResource("Animation_8kp7h"),
+"printing": SubResource("Animation_vem8l")
+}
+
+[node name="OfficePrinter" type="StaticBody3D" node_paths=PackedStringArray("camera", "mesh")]
+script = ExtResource("1_wkyai")
+camera = NodePath("Camera")
+mesh = NodePath("PrinterMesh")
+
+[node name="PrinterMesh" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_n2nfk")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.249878, -0.0407715)
+shape = SubResource("BoxShape3D_fqrqj")
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(0.983255, -0.107115, 0.147432, 0, 0.809017, 0.587785, -0.182236, -0.577943, 0.79547, 0.156, 0.555, 0.693)
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_txa45")
+}
+
+[node name="OfficeOfficeFilesC" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00400183, 0.0614319, 0.296863)
+mesh = ExtResource("3_fmua2")
+
+[node name="PrintedPaper" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.999994, -0.00292204, -0.00167734, 0.00335785, -0.823437, -0.567397, 0.000276772, -0.5674, 0.823442, 0, 0, 0)
+mesh = ExtResource("4_yfccw")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

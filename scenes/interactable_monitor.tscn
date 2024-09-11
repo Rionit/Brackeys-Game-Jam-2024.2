@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=4 uid="uid://c2ujxgqq26xy3"]
 
-[ext_resource type="Script" path="res://scripts/InteractableMonitor.gd" id="1_5m844"]
+[ext_resource type="Script" path="res://scripts/Computer.gd" id="1_5m844"]
 [ext_resource type="Shader" path="res://shaders/outline.gdshader" id="2_0p54u"]
 [ext_resource type="PackedScene" uid="uid://jhkdbdb55v8p" path="res://scenes/computer_os.tscn" id="2_tcf87"]
 [ext_resource type="Texture2D" uid="uid://c6vks6cp1b7pp" path="res://assets/office_pc1.png" id="3_w4luf"]
@@ -12,7 +12,7 @@ load_path = "res://.godot/imported/office_palette1.png-3db4960c4f446185c2591d9f6
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("2_0p54u")
-shader_parameter/outline_color = Color(1, 0, 1, 1)
+shader_parameter/outline_color = Color(0, 0.683333, 1, 1)
 shader_parameter/outline_width = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pvqi7"]
@@ -108,8 +108,10 @@ size = Vector3(0.0793457, 0.400726, 0.399902)
 [sub_resource type="BoxShape3D" id="BoxShape3D_wmhst"]
 size = Vector3(0.118164, 0.401016, 0.398315)
 
-[node name="Interactable Monitor" type="StaticBody3D"]
+[node name="Interactable Monitor" type="StaticBody3D" node_paths=PackedStringArray("camera", "mesh")]
 script = ExtResource("1_5m844")
+camera = NodePath("Camera")
+mesh = NodePath("OfficeComputer")
 
 [node name="OfficeComputer" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.000296749, 0, 1, 0, 1, 0, -1, 0, -0.000296749, 0, 0, 0)
