@@ -1,12 +1,51 @@
 [gd_scene load_steps=9 format=3 uid="uid://daylvoj8osmbv"]
 
-[ext_resource type="Script" path="res://scripts/OfficePrinter.gd" id="1_wkyai"]
+[ext_resource type="Script" path="res://scripts/Interactables/OfficePrinter.gd" id="1_wkyai"]
 [ext_resource type="ArrayMesh" uid="uid://cbh34khpprxsu" path="res://assets/office/office_Printer.res" id="2_n2nfk"]
 [ext_resource type="ArrayMesh" uid="uid://bkw5ku1vgbhsf" path="res://assets/office/office_Office_Files_C.res" id="3_fmua2"]
 [ext_resource type="ArrayMesh" uid="uid://bs2c781v7gpqr" path="res://assets/office/office_Office_Files_D_Custom.res" id="4_yfccw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fqrqj"]
 size = Vector3(0.713867, 0.500244, 0.671875)
+
+[sub_resource type="Animation" id="Animation_8kp7h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PrintedPaper:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.603342, -0.00203698, 3.13751)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PrintedPaper:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PrintedPaper:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_vem8l"]
 resource_name = "printing"
@@ -48,45 +87,6 @@ tracks/2/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_8kp7h"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PrintedPaper:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.603342, -0.00203698, 3.13751)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PrintedPaper:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PrintedPaper:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_txa45"]
 _data = {
 "RESET": SubResource("Animation_8kp7h"),
@@ -120,7 +120,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00400183, 0.0614319, 0.2968
 mesh = ExtResource("3_fmua2")
 
 [node name="PrintedPaper" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.999994, -0.00292204, -0.00167734, 0.00335785, -0.823437, -0.567397, 0.000276772, -0.5674, 0.823442, 0, 0, 0)
+transform = Transform3D(-0.999994, -0.00292681, -0.00167734, 0.00336178, -0.823437, -0.567397, 0.00027948, -0.5674, 0.823442, 0, 0, 0)
 mesh = ExtResource("4_yfccw")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

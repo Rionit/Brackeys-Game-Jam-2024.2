@@ -11,6 +11,9 @@ var highlighted := false
 var interacting := false
 var player = null
 
+func _ready() -> void:
+	mesh.get_active_material(0).next_pass.set_shader_parameter("outline_color", Consts.outline_color)
+
 func _physics_process(_delta: float) -> void:
 	mesh.get_active_material(0).next_pass.set_shader_parameter("outline_width", outline_width)
 

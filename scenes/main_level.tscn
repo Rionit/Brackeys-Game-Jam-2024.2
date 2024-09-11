@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://m8x7hr1574di"]
+[gd_scene load_steps=47 format=4 uid="uid://m8x7hr1574di"]
 
 [ext_resource type="ArrayMesh" uid="uid://leh6ovckg0jo" path="res://assets/office/office_Floor.res" id="1_eptkj"]
 [ext_resource type="PackedScene" uid="uid://bp431cn4s2tpk" path="res://scenes/cubicle.tscn" id="2_bfrnm"]
@@ -27,6 +27,7 @@
 [ext_resource type="ArrayMesh" uid="uid://drrlpi6drpqae" path="res://assets/office/office_Office_Files_F.res" id="23_a8gsj"]
 [ext_resource type="ArrayMesh" uid="uid://b3koax6tqj7ix" path="res://assets/office/office_Office_Files_E.res" id="24_gbwy6"]
 [ext_resource type="ArrayMesh" uid="uid://bs2c781v7gpqr" path="res://assets/office/office_Office_Files_D_Custom.res" id="25_63vkd"]
+[ext_resource type="PackedScene" uid="uid://bvqhehp8cpoe7" path="res://scenes/telephone.tscn" id="25_ii4ae"]
 [ext_resource type="ArrayMesh" uid="uid://bgeem6lo5y1kr" path="res://assets/office/office_Painting_Small2.res" id="26_hlcha"]
 [ext_resource type="ArrayMesh" uid="uid://cwscsh7fwp167" path="res://assets/office/office_Office_Desk_1.res" id="30_5f1yo"]
 [ext_resource type="ArrayMesh" uid="uid://dhc1sratall2r" path="res://assets/office/office_Office_CounterA1.res" id="30_8yr8e"]
@@ -372,16 +373,6 @@ skeleton = NodePath("../..")
 
 [node name="Office Chair" parent="Cubicles/Cubicle main" instance=ExtResource("3_0dyrf")]
 
-[node name="OfficePhoneABase2" type="MeshInstance3D" parent="Cubicles/Cubicle main"]
-transform = Transform3D(0.491497, 0, 0.870879, 0, 1, 0, -0.870879, 0, 0.491497, 0.571653, 0.949, -2.06844)
-mesh = ExtResource("13_vgvm6")
-skeleton = NodePath("../../Cubicle 1")
-
-[node name="OfficePhoneB2" type="MeshInstance3D" parent="Cubicles/Cubicle main"]
-transform = Transform3D(-0.52089, -0.838237, -0.161343, 0, 0.18901, -0.981975, 0.853624, -0.511501, -0.0984534, 0.578473, 1.00242, -1.99863)
-mesh = ExtResource("14_1iiqm")
-skeleton = NodePath("../../Cubicle 1")
-
 [node name="OfficeTrashBinSmall" type="MeshInstance3D" parent="Cubicles/Cubicle main"]
 transform = Transform3D(-0.0830852, 0, 0.137415, 0, 0.254955, 0, -0.143908, 0, -0.0793368, 0.727171, 0.949, -0.491165)
 mesh = ExtResource("18_imllj")
@@ -450,6 +441,9 @@ mesh = ExtResource("11_nr5hl")
 [node name="OfficeStapler" type="MeshInstance3D" parent="Cubicles/Cubicle main"]
 transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 1.0242, 0.949, -0.681617)
 mesh = ExtResource("15_mcan8")
+
+[node name="Telephone" parent="Cubicles/Cubicle main" instance=ExtResource("25_ii4ae")]
+transform = Transform3D(0.86201, 0, -0.506892, 0, 1, 0, 0.506892, 0, 0.86201, 0.558793, 0.950254, -2.03944)
 
 [node name="Cubicle 2" parent="Cubicles" instance=ExtResource("2_bfrnm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
@@ -805,4 +799,4 @@ mesh = ExtResource("4_plrny")
 skeleton = NodePath("../..")
 
 [node name="OfficePrinter" parent="Printer" instance=ExtResource("39_kgtl7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.949596, 1.03156)
+transform = Transform3D(1, -7.14008e-08, 5.01661e-06, 7.14008e-08, 1, -1.67166e-05, -5.01661e-06, 1.67166e-05, 1, 0, 0.949596, 1.03156)

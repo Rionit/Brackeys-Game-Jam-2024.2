@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1726056861
+::res://::1726060027
 icon.svg::CompressedTexture2D::1712641266179066697::1725801858::1725801867::1::::<><>::
 TexTuneUserTextBG.tres::StyleBoxFlat::8451457975153372967::1725974332::0::1::::<><>::
 ::res://assets/::1725807296
@@ -12,7 +12,7 @@ office_palette1.png::CompressedTexture2D::762459829433864580::1725805501::172580
 office_pc1.png::CompressedTexture2D::6992688399248230293::1725805502::1725805503::1::::<><>::
 office_Rug_1.png::CompressedTexture2D::3855187377033583925::1725805502::1725805503::1::::<><>::
 office_tv.png::CompressedTexture2D::7600332180748528335::1725805502::1725805503::1::::<><>::
-::res://assets/office/::1726059905
+::res://assets/office/::1726080908
 office_AirConditioner_A.res::ArrayMesh::4516497092568465876::1725807294::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
 office_AirConditioner_B.res::ArrayMesh::4480475475974000625::1725807294::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
 office_AlcoholDisp_1.res::ArrayMesh::8973145089730477950::1725807295::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
@@ -123,7 +123,7 @@ office_Office_Desk_drawer.res::ArrayMesh::7973661823759465900::1725807295::0::1:
 office_Office_Files_A.res::ArrayMesh::6289866037748355003::1726057286::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
 office_Office_Files_B.res::ArrayMesh::9103264725602158765::1726057286::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
 office_Office_Files_C.res::ArrayMesh::3135565889978910477::1726057286::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
-office_Office_Files_D_Custom.res::ArrayMesh::3705738422360417469::1725807294::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png<>uid://duh01gq8gyrop::::res://assets/office_DocBoard.png
+office_Office_Files_D_Custom.res::ArrayMesh::3705738422360417469::1726060693::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png<>uid://duh01gq8gyrop::::res://assets/office_DocBoard.png
 office_Office_Files_E.res::ArrayMesh::4373203377808371727::1726057286::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
 office_Office_Files_F.res::ArrayMesh::8388261956809244524::1726057286::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
 office_Painting.res::ArrayMesh::3607751521243981239::1725807296::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png<>uid://nh453vjcuxgq::::res://assets/office_Paintings.png
@@ -133,7 +133,7 @@ office_Paper Stray.res::ArrayMesh::4483965816965091818::1725807294::0::1::::<><>
 office_Pen.res::ArrayMesh::2060772262189725951::1725807295::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
 office_Pencil_1.res::ArrayMesh::5534826765800247049::1725807295::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
 office_Pencil_2.res::ArrayMesh::951728829962841249::1725807295::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
-office_Phone_A Base.res::ArrayMesh::2111026934027414719::1725807295::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
+office_Phone_A Base.res::ArrayMesh::2111026934027414719::1726080942::0::1::::<><>::res://shaders/outline.gdshader<>uid://k4lup51iwo4c::::res://assets/office_palette1.png
 office_Phone_B.res::ArrayMesh::4658209918181455798::1725807295::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
 office_Printer.res::ArrayMesh::4859233255872760044::1726059905::0::1::::<><>::res://shaders/outline.gdshader<>uid://k4lup51iwo4c::::res://assets/office_palette1.png
 office_Projector.res::ArrayMesh::1418454596678547899::1725807294::0::1::::<><>::uid://k4lup51iwo4c::::res://assets/office_palette1.png
@@ -178,35 +178,38 @@ anger_stress_bar_bg.png::CompressedTexture2D::1697166030048511737::1725980487::1
 anger_stress_bar_over.png::CompressedTexture2D::8980962836837777580::1725980499::1725980630::1::::<><>::
 OS_cross.png::CompressedTexture2D::935499906066790132::1725823974::1725823975::1::::<><>::
 OS_window_texture.png::CompressedTexture2D::3973385843474244851::1725823006::1725823008::1::::<><>::
-::res://scenes/::1726059929
-camera_transition.tscn::PackedScene::3815674569669721550::1726059929::0::1::::<><>::res://scripts/singletons/CameraTransition.gd
-computer_os.tscn::PackedScene::646762821574582645::1726059929::0::1::::<><>::uid://dwkh46x5pfg4v::::res://scenes/OS_window_bg.tscn<>uid://nlfsucoxd03q::::res://images/OS_cross.png<>res://scripts/TexTuneAIApp.gd<>res://scripts/CalulatorApp.gd<>uid://dsn7jppsyuvm2::::res://TexTuneUserTextBG.tres
-cubicle.tscn::PackedScene::3500866926042231340::1726059928::0::1::::<><>::uid://8etpjcuylarp::::res://assets/office/office_Wall_Small.res<>uid://dvbs3kcndemb7::::res://assets/office/office_Office_Desk_4.res<>uid://qfqmm30las36::::res://assets/office/office_Computer_Monitor.res<>uid://bmuuhhqfg4o3m::::res://assets/office/office_Computer_Case.res<>uid://na8gtruwlj5t::::res://assets/office/office_Computer_Keyboard.res<>uid://bdn6yffewpeyo::::res://assets/office/office_Computer_Mouse.res
-interactable_monitor.tscn::PackedScene::6709815567510248016::1726060027::0::1::::<><>::res://scripts/InteractableMonitor.gd<>res://shaders/outline.gdshader<>uid://jhkdbdb55v8p::::res://scenes/computer_os.tscn<>uid://c6vks6cp1b7pp::::res://assets/office_pc1.png
-main_cubicle.tscn::PackedScene::7178153051656226026::1726059928::0::1::::<><>::uid://8etpjcuylarp::::res://assets/office/office_Wall_Small.res<>uid://dvbs3kcndemb7::::res://assets/office/office_Office_Desk_4.res<>uid://c2ujxgqq26xy3::::res://scenes/interactable_monitor.tscn<>uid://bmuuhhqfg4o3m::::res://assets/office/office_Computer_Case.res<>uid://na8gtruwlj5t::::res://assets/office/office_Computer_Keyboard.res<>uid://bdn6yffewpeyo::::res://assets/office/office_Computer_Mouse.res
-main_level.tscn::PackedScene::911844620926775106::1726059928::0::1::::<><>::uid://leh6ovckg0jo::::res://assets/office/office_Floor.res<>uid://bp431cn4s2tpk::::res://scenes/cubicle.tscn<>uid://dm35c4frwby5n::::res://scenes/office_chair.tscn<>uid://cvu4f66whumlf::::res://assets/office/office_Office_Files_A.res<>uid://baw547e8eo2ee::::res://assets/office/office_Tape.res<>uid://clmsowwhs7nqh::::res://assets/office/office_TrashBin.res<>uid://dajfequ5nusk5::::res://scenes/main_cubicle.tscn<>uid://i873p7ge805f::::res://assets/office/office_Notepad.res<>uid://d2xxo7w28obnp::::res://assets/office/office_Office_Files_B.res<>uid://q1hgq0wrwxci::::res://scenes/office_wall.tscn<>uid://bkw5ku1vgbhsf::::res://assets/office/office_Office_Files_C.res<>uid://brnve1mqetsxj::::res://assets/office/office_Painting.res<>uid://chb1bxccuv40w::::res://scenes/player.tscn<>uid://bgfq7rxpt18w6::::res://assets/office/office_Painting_Small.res<>uid://b45ci50k1twkg::::res://assets/office/office_Paper Stray.res<>uid://5cukm10cg5ct::::res://assets/office/office_Phone_A Base.res<>uid://b7mqbirtyps7w::::res://assets/office/office_Phone_B.res<>uid://wqap7gpcu7dg::::res://assets/office/office_Stapler.res<>uid://c58ksd3ahtd04::::res://assets/office/office_StickNote_1.res<>uid://csrflw5bxjgye::::res://assets/office/office_TrashBin_Small.res<>uid://ck4d12e2hjvp6::::res://assets/office/office_Pencil_1.res<>uid://nta3nag11ofp::::res://assets/office/office_Pencil_2.res<>uid://4mivaq31diqh::::res://assets/office/office_Pen.res<>uid://c4qda3f2om7yl::::res://assets/office/office_CoffeeCup.res<>uid://drrlpi6drpqae::::res://assets/office/office_Office_Files_F.res<>uid://b3koax6tqj7ix::::res://assets/office/office_Office_Files_E.res<>uid://bs2c781v7gpqr::::res://assets/office/office_Office_Files_D_Custom.res<>uid://bgeem6lo5y1kr::::res://assets/office/office_Painting_Small2.res<>uid://cwscsh7fwp167::::res://assets/office/office_Office_Desk_1.res<>uid://dhc1sratall2r::::res://assets/office/office_Office_CounterA1.res<>uid://dw17qtcvqacb7::::res://assets/office/office_Office_Desk_1_Sep.res<>uid://c47gicv7rcg3n::::res://assets/office/office_Office_Counter_Door.res<>uid://cf436vad7r768::::res://assets/office/office_Microwave_New.res<>uid://b36g0pqb6qdmy::::res://assets/office/office_Microwave_New_B.res<>uid://bf3sude475pb::::res://assets/office/office_Office_Counter_Drawer.res<>uid://doev56plmmduf::::res://assets/office/office_Lamp_1.res<>uid://c2nkl30fkswfn::::res://assets/office/office_Nature_Deco_Bamboo1.res<>uid://bbbag4rbat54u::::res://assets/office/office_Nature_Deco.res<>uid://daylvoj8osmbv::::res://scenes/office_printer.tscn
+::res://scenes/::1726080908
+camera_transition.tscn::PackedScene::3815674569669721550::1726063385::0::1::::<><>::res://scripts/singletons/CameraTransition.gd
+computer_os.tscn::PackedScene::646762821574582645::1726063385::0::1::::<><>::uid://dwkh46x5pfg4v::::res://scenes/OS_window_bg.tscn<>uid://nlfsucoxd03q::::res://images/OS_cross.png<>res://scripts/TexTuneAIApp.gd<>res://scripts/CalulatorApp.gd<>uid://dsn7jppsyuvm2::::res://TexTuneUserTextBG.tres
+cubicle.tscn::PackedScene::3500866926042231340::1726063385::0::1::::<><>::uid://8etpjcuylarp::::res://assets/office/office_Wall_Small.res<>uid://dvbs3kcndemb7::::res://assets/office/office_Office_Desk_4.res<>uid://qfqmm30las36::::res://assets/office/office_Computer_Monitor.res<>uid://bmuuhhqfg4o3m::::res://assets/office/office_Computer_Case.res<>uid://na8gtruwlj5t::::res://assets/office/office_Computer_Keyboard.res<>uid://bdn6yffewpeyo::::res://assets/office/office_Computer_Mouse.res
+interactable_monitor.tscn::PackedScene::6709815567510248016::1726080942::0::1::::<><>::res://scripts/Computer.gd<>res://shaders/outline.gdshader<>uid://jhkdbdb55v8p::::res://scenes/computer_os.tscn<>uid://c6vks6cp1b7pp::::res://assets/office_pc1.png
+main_cubicle.tscn::PackedScene::7178153051656226026::1726063385::0::1::::<><>::uid://8etpjcuylarp::::res://assets/office/office_Wall_Small.res<>uid://dvbs3kcndemb7::::res://assets/office/office_Office_Desk_4.res<>uid://c2ujxgqq26xy3::::res://scenes/interactable_monitor.tscn<>uid://bmuuhhqfg4o3m::::res://assets/office/office_Computer_Case.res<>uid://na8gtruwlj5t::::res://assets/office/office_Computer_Keyboard.res<>uid://bdn6yffewpeyo::::res://assets/office/office_Computer_Mouse.res
+main_level.tscn::PackedScene::911844620926775106::1726063384::0::1::::<><>::uid://leh6ovckg0jo::::res://assets/office/office_Floor.res<>uid://bp431cn4s2tpk::::res://scenes/cubicle.tscn<>uid://dm35c4frwby5n::::res://scenes/office_chair.tscn<>uid://cvu4f66whumlf::::res://assets/office/office_Office_Files_A.res<>uid://baw547e8eo2ee::::res://assets/office/office_Tape.res<>uid://clmsowwhs7nqh::::res://assets/office/office_TrashBin.res<>uid://dajfequ5nusk5::::res://scenes/main_cubicle.tscn<>uid://i873p7ge805f::::res://assets/office/office_Notepad.res<>uid://d2xxo7w28obnp::::res://assets/office/office_Office_Files_B.res<>uid://q1hgq0wrwxci::::res://scenes/office_wall.tscn<>uid://bkw5ku1vgbhsf::::res://assets/office/office_Office_Files_C.res<>uid://brnve1mqetsxj::::res://assets/office/office_Painting.res<>uid://chb1bxccuv40w::::res://scenes/player.tscn<>uid://bgfq7rxpt18w6::::res://assets/office/office_Painting_Small.res<>uid://b45ci50k1twkg::::res://assets/office/office_Paper Stray.res<>uid://5cukm10cg5ct::::res://assets/office/office_Phone_A Base.res<>uid://b7mqbirtyps7w::::res://assets/office/office_Phone_B.res<>uid://wqap7gpcu7dg::::res://assets/office/office_Stapler.res<>uid://c58ksd3ahtd04::::res://assets/office/office_StickNote_1.res<>uid://csrflw5bxjgye::::res://assets/office/office_TrashBin_Small.res<>uid://ck4d12e2hjvp6::::res://assets/office/office_Pencil_1.res<>uid://nta3nag11ofp::::res://assets/office/office_Pencil_2.res<>uid://4mivaq31diqh::::res://assets/office/office_Pen.res<>uid://c4qda3f2om7yl::::res://assets/office/office_CoffeeCup.res<>uid://drrlpi6drpqae::::res://assets/office/office_Office_Files_F.res<>uid://b3koax6tqj7ix::::res://assets/office/office_Office_Files_E.res<>uid://bs2c781v7gpqr::::res://assets/office/office_Office_Files_D_Custom.res<>uid://bgeem6lo5y1kr::::res://assets/office/office_Painting_Small2.res<>uid://cwscsh7fwp167::::res://assets/office/office_Office_Desk_1.res<>uid://dhc1sratall2r::::res://assets/office/office_Office_CounterA1.res<>uid://dw17qtcvqacb7::::res://assets/office/office_Office_Desk_1_Sep.res<>uid://c47gicv7rcg3n::::res://assets/office/office_Office_Counter_Door.res<>uid://cf436vad7r768::::res://assets/office/office_Microwave_New.res<>uid://b36g0pqb6qdmy::::res://assets/office/office_Microwave_New_B.res<>uid://bf3sude475pb::::res://assets/office/office_Office_Counter_Drawer.res<>uid://doev56plmmduf::::res://assets/office/office_Lamp_1.res<>uid://c2nkl30fkswfn::::res://assets/office/office_Nature_Deco_Bamboo1.res<>uid://bbbag4rbat54u::::res://assets/office/office_Nature_Deco.res<>uid://daylvoj8osmbv::::res://scenes/office_printer.tscn
 office_chair.tscn::PackedScene::8061157364923215153::1726045993::0::1::::<><>::uid://dfaoq4nk7jcft::::res://assets/office/office_Chair_Office_Bottom.res<>uid://dq0ahk4agehf5::::res://assets/office/office_Chair_Office_Base_A.res<>uid://6g8taxgj5mgf::::res://assets/office/office_Chair_Office_Wheel.res
-office_wall.tscn::PackedScene::1177131933543768040::1726059929::0::1::::<><>::uid://dx4lbbb7p32t2::::res://assets/office/office_Wall_Standard.res
+office_printer.tscn::PackedScene::7209513256518112567::1726080942::0::1::::<><>::res://scripts/OfficePrinter.gd<>uid://cbh34khpprxsu::::res://assets/office/office_Printer.res<>uid://bkw5ku1vgbhsf::::res://assets/office/office_Office_Files_C.res<>uid://bs2c781v7gpqr::::res://assets/office/office_Office_Files_D_Custom.res
+office_wall.tscn::PackedScene::1177131933543768040::1726063385::0::1::::<><>::uid://dx4lbbb7p32t2::::res://assets/office/office_Wall_Standard.res
 OS_window_bg.tscn::PackedScene::8724538860766888863::1725823523::0::1::::<><>::uid://bwu0c4qh8cmb8::::res://images/OS_window_texture.png
-player.tscn::PackedScene::5267809289457441028::1726059928::0::1::::<><>::res://scripts/player.gd<>res://scripts/PlayerExports.gd<>res://scripts/HeadMovement.gd<>uid://cdv17wckh7ua6::::res://scenes/shakeable_camera.tscn<>res://scripts/InteractRay.gd<>res://scripts/StateMachine.gd<>res://scripts/states/PlayerIdle.gd<>res://scripts/states/PlayerWalk.gd<>uid://ygecuq7k83kn::::res://images/anger_stress_bar_bg.png<>uid://d07pe7sbiu84o::::res://images/anger_stress_bar_over.png<>res://scripts/AngerStressBar.gd
-office_printer.tscn::PackedScene::7209513256518112567::1726059929::0::1::::<><>::res://scripts/OfficePrinter.gd<>uid://cbh34khpprxsu::::res://assets/office/office_Printer.res
-shakeable_camera.tscn::PackedScene::5028396777420740767::1726059928::0::1::::<><>::res://scripts/ShakeableCamera.gd
-::res://scripts/::1726059927
+player.tscn::PackedScene::5267809289457441028::1726063384::0::1::::<><>::res://scripts/player.gd<>res://scripts/PlayerExports.gd<>res://scripts/HeadMovement.gd<>uid://cdv17wckh7ua6::::res://scenes/shakeable_camera.tscn<>res://scripts/InteractRay.gd<>res://scripts/StateMachine.gd<>res://scripts/states/PlayerIdle.gd<>res://scripts/states/PlayerWalk.gd<>uid://ygecuq7k83kn::::res://images/anger_stress_bar_bg.png<>uid://d07pe7sbiu84o::::res://images/anger_stress_bar_over.png<>res://scripts/AngerStressBar.gd
+shakeable_camera.tscn::PackedScene::5028396777420740767::1726063384::0::1::::<><>::res://scripts/ShakeableCamera.gd
+telephone.tscn::PackedScene::3893848998619887192::1726080908::0::1::::<><>::uid://5cukm10cg5ct::::res://assets/office/office_Phone_A Base.res<>uid://b7mqbirtyps7w::::res://assets/office/office_Phone_B.res
+::res://scripts/::1726080931
 AngerStressBar.gd::GDScript::-1::1726040140::0::1::::<>TextureProgressBar<>::
-CalulatorApp.gd::GDScript::-1::1726040934::0::1::::<>NinePatchRect<>::
+CalulatorApp.gd::GDScript::-1::1726063384::0::1::::<>NinePatchRect<>::
+Computer.gd::GDScript::-1::1726063205::0::1::::Computer<>Interactable<>::
 HeadMovement.gd::GDScript::-1::1725808962::0::1::::HeadMovement<>Node3D<>::
-InteractableMonitor.gd::GDScript::-1::1726059784::0::1::::Computer<>Interactable<>::
+Interactable.gd::GDScript::-1::1726060309::0::1::::Interactable<>Node3D<>::
 InteractRay.gd::GDScript::-1::1725971932::0::1::::<>RayCast3D<>::
+OfficePrinter.gd::GDScript::-1::1726062543::0::1::::OfficePrinter<>Interactable<>::
 player.gd::GDScript::-1::1725970403::0::1::::<>CharacterBody3D<>::
 PlayerExports.gd::GDScript::-1::1725963301::0::1::::<>Node3D<>::
-Interactable.gd::GDScript::-1::1726059927::0::1::::Interactable<>Node3D<>::
-OfficePrinter.gd::GDScript::-1::1726059905::0::1::::OfficePrinter<>Interactable<>::
 ShakeableCamera.gd::GDScript::-1::1725808681::0::1::::<>Area3D<>::
 StateMachine.gd::GDScript::-1::1725809406::0::1::::<>Node<>::
-TexTuneAIApp.gd::GDScript::-1::1726045191::0::1::::<>NinePatchRect<>::
-::res://scripts/singletons/::1726059604
+Telephone.gd::GDScript::-1::1726080922::0::1::::<>StaticBody3D<>::
+TexTuneAIApp.gd::GDScript::-1::1726063366::0::1::::<>NinePatchRect<>::
+::res://scripts/Interactables/::1726080931
+::res://scripts/singletons/::1726062538
 CameraTransition.gd::GDScript::-1::1725970023::0::1::::<>Node<>::
-Consts.gd::GDScript::-1::1726059604::0::1::::<>Node<>::
+Consts.gd::GDScript::-1::1726062538::0::1::::<>Node<>::
 GameManager.gd::GDScript::-1::1726040263::0::1::::<>Node<>::
 ::res://scripts/states/::1725809897
 PlayerCrouch.gd::GDScript::-1::1725809376::0::1::::PlayerCrouch<>PlayerState<>::
@@ -218,5 +221,5 @@ PlayerSprint.gd::GDScript::-1::1725809376::0::1::::PlayerSprint<>PlayerState<>::
 PlayerState.gd::GDScript::-1::1725809376::0::1::::PlayerState<>State<>::
 PlayerWalk.gd::GDScript::-1::1725809897::0::1::::PlayerWalk<>PlayerState<>::
 State.gd::GDScript::-1::1725809376::0::1::::State<>Node<>::
-::res://shaders/::1726059929
-outline.gdshader::Shader::-1::1726060027::0::1::::<><>::
+::res://shaders/::1726080908
+outline.gdshader::Shader::-1::1726080942::0::1::::<><>::

@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=4 uid="uid://c2ujxgqq26xy3"]
 
-[ext_resource type="Script" path="res://scripts/Computer.gd" id="1_5m844"]
+[ext_resource type="Script" path="res://scripts/Interactables/Computer.gd" id="1_5m844"]
 [ext_resource type="Shader" path="res://shaders/outline.gdshader" id="2_0p54u"]
 [ext_resource type="PackedScene" uid="uid://jhkdbdb55v8p" path="res://scenes/computer_os.tscn" id="2_tcf87"]
 [ext_resource type="Texture2D" uid="uid://c6vks6cp1b7pp" path="res://assets/office_pc1.png" id="3_w4luf"]
