@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dajfequ5nusk5"]
+[gd_scene load_steps=9 format=3 uid="uid://dajfequ5nusk5"]
 
 [ext_resource type="ArrayMesh" uid="uid://8etpjcuylarp" path="res://assets/office/office_Wall_Small.res" id="1_wlmhx"]
 [ext_resource type="ArrayMesh" uid="uid://dvbs3kcndemb7" path="res://assets/office/office_Office_Desk_4.res" id="2_acbpi"]
-[ext_resource type="PackedScene" uid="uid://c2ujxgqq26xy3" path="res://scenes/interactable_monitor.tscn" id="3_furlj"]
 [ext_resource type="ArrayMesh" uid="uid://bmuuhhqfg4o3m" path="res://assets/office/office_Computer_Case.res" id="4_7osk1"]
 [ext_resource type="ArrayMesh" uid="uid://na8gtruwlj5t" path="res://assets/office/office_Computer_Keyboard.res" id="5_gqqye"]
 [ext_resource type="ArrayMesh" uid="uid://bdn6yffewpeyo" path="res://assets/office/office_Computer_Mouse.res" id="6_d4i5s"]
@@ -47,9 +46,6 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeOfficeDesk4/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_t41g8")
-
-[node name="OfficeComputerMonitor" parent="." instance=ExtResource("3_furlj")]
-transform = Transform3D(1, 0, 0.000296705, 0, 1, 0, -0.000296705, 0, 1, 0.42181, 0.954176, -1.21737)
 
 [node name="OfficeComputerCase" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0467403, 0, 0.998907, 0, 1, 0, -0.998907, 0, 0.0467403, 0.326003, 0.952684, -1.69821)

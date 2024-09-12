@@ -36,7 +36,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0110876, 0.0110876, 0.0110876, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Desktop" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,7 +44,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Desktop"]
 custom_minimum_size = Vector2(0, 976)
 layout_mode = 2
 theme_override_constants/margin_left = 50
@@ -52,16 +52,16 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer"]
+[node name="GridContainer" type="GridContainer" parent="Desktop/MarginContainer"]
 layout_mode = 2
 theme_override_constants/h_separation = 50
 theme_override_constants/v_separation = 50
 
-[node name="TexTune icon" type="ColorRect" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="TexTune icon" type="ColorRect" parent="Desktop/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
-[node name="Launcher" type="Button" parent="VBoxContainer/MarginContainer/GridContainer/TexTune icon"]
+[node name="Launcher" type="Button" parent="Desktop/MarginContainer/GridContainer/TexTune icon"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -70,11 +70,11 @@ grow_horizontal = 2
 grow_vertical = 2
 flat = true
 
-[node name="Calculator icon" type="ColorRect" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="Calculator icon" type="ColorRect" parent="Desktop/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
-[node name="Launcher" type="Button" parent="VBoxContainer/MarginContainer/GridContainer/Calculator icon"]
+[node name="Launcher" type="Button" parent="Desktop/MarginContainer/GridContainer/Calculator icon"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -83,12 +83,12 @@ grow_horizontal = 2
 grow_vertical = 2
 flat = true
 
-[node name="Calculator icon2" type="ColorRect" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="Calculator icon2" type="ColorRect" parent="Desktop/MarginContainer/GridContainer"]
 visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
-[node name="Launcher" type="Button" parent="VBoxContainer/MarginContainer/GridContainer/Calculator icon2"]
+[node name="Launcher" type="Button" parent="Desktop/MarginContainer/GridContainer/Calculator icon2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -99,12 +99,13 @@ grow_horizontal = 2
 grow_vertical = 2
 flat = true
 
-[node name="TaskBar" parent="VBoxContainer" instance=ExtResource("1_xj25n")]
+[node name="TaskBar" parent="Desktop" instance=ExtResource("1_xj25n")]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_vertical = 8
 
 [node name="TexTune AI Trainer" parent="." instance=ExtResource("1_xj25n")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = 9
@@ -232,6 +233,7 @@ placeholder_text = "Rewrite the text you see on the top."
 wrap_mode = 1
 
 [node name="The Calculator" parent="." instance=ExtResource("1_xj25n")]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 9
 anchor_top = 0.0
@@ -345,8 +347,8 @@ theme_override_styles/normal = ExtResource("4_8xtpt")
 placeholder_text = "What is the result?"
 alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/TexTune icon/Launcher" to="TexTune AI Trainer" method="_on_launcher_pressed"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/Calculator icon/Launcher" to="The Calculator" method="_on_launcher_pressed"]
+[connection signal="pressed" from="Desktop/MarginContainer/GridContainer/TexTune icon/Launcher" to="TexTune AI Trainer" method="_on_launcher_pressed"]
+[connection signal="pressed" from="Desktop/MarginContainer/GridContainer/Calculator icon/Launcher" to="The Calculator" method="_on_launcher_pressed"]
 [connection signal="pressed" from="TexTune AI Trainer/VBoxContainer/HBoxContainer/Cross/Exit" to="TexTune AI Trainer" method="_on_exit_pressed"]
 [connection signal="text_changed" from="TexTune AI Trainer/VBoxContainer/MarginContainer2/ColorRect/UserTextColored/UserTextInput" to="TexTune AI Trainer" method="_on_user_text_input_text_changed"]
 [connection signal="pressed" from="The Calculator/VBoxContainer/HBoxContainer/Cross/Exit" to="The Calculator" method="_on_exit_pressed"]

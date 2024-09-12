@@ -13,6 +13,7 @@ var last_event_time: float = -1.0
 @onready var node_area = $Area
 
 func _ready():
+	super()
 	node_area.mouse_entered.connect(_mouse_entered_area)
 	node_area.mouse_exited.connect(_mouse_exited_area)
 	node_area.input_event.connect(_mouse_input_event)

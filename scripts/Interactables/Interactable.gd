@@ -5,6 +5,7 @@ extends Node3D
 @export var mesh: MeshInstance3D
 @export var prompt_message = "Interact"
 @export var prompt_action = "interact"
+@export var interactable := false
 
 var outline_width = 0.0
 var highlighted := false
@@ -13,9 +14,14 @@ var player = null
 
 func _ready() -> void:
 	mesh.get_active_material(0).next_pass.set_shader_parameter("outline_color", Consts.outline_color)
-
+	GameManager.task_started.connect(init)
+	
 func _physics_process(_delta: float) -> void:
 	mesh.get_active_material(0).next_pass.set_shader_parameter("outline_width", outline_width)
+
+func init(object, task):
+	if self == object:
+		interactable = true
 
 func exit() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

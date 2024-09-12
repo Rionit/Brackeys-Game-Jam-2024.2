@@ -1,8 +1,11 @@
-[gd_scene load_steps=45 format=4 uid="uid://m8x7hr1574di"]
+[gd_scene load_steps=49 format=4 uid="uid://m8x7hr1574di"]
 
 [ext_resource type="ArrayMesh" uid="uid://leh6ovckg0jo" path="res://assets/office/office_Floor.res" id="1_eptkj"]
+[ext_resource type="Script" path="res://scripts/TaskManager.gd" id="2_7dhvd"]
 [ext_resource type="PackedScene" uid="uid://bp431cn4s2tpk" path="res://scenes/cubicle.tscn" id="2_bfrnm"]
+[ext_resource type="Resource" uid="uid://cd71qlkxvoyff" path="res://resources/Calculator.tres" id="2_mcsxj"]
 [ext_resource type="PackedScene" uid="uid://dm35c4frwby5n" path="res://scenes/office_chair.tscn" id="3_0dyrf"]
+[ext_resource type="Resource" uid="uid://c0h5lttmcy6hq" path="res://resources/Telephone.tres" id="3_i4uaf"]
 [ext_resource type="ArrayMesh" uid="uid://cvu4f66whumlf" path="res://assets/office/office_Office_Files_A.res" id="4_plrny"]
 [ext_resource type="ArrayMesh" uid="uid://baw547e8eo2ee" path="res://assets/office/office_Tape.res" id="5_2c0wl"]
 [ext_resource type="ArrayMesh" uid="uid://clmsowwhs7nqh" path="res://assets/office/office_TrashBin.res" id="6_q0b82"]
@@ -17,6 +20,7 @@
 [ext_resource type="ArrayMesh" uid="uid://b45ci50k1twkg" path="res://assets/office/office_Paper Stray.res" id="12_48rqt"]
 [ext_resource type="ArrayMesh" uid="uid://wqap7gpcu7dg" path="res://assets/office/office_Stapler.res" id="15_mcan8"]
 [ext_resource type="ArrayMesh" uid="uid://c58ksd3ahtd04" path="res://assets/office/office_StickNote_1.res" id="16_7hfn4"]
+[ext_resource type="PackedScene" uid="uid://c2ujxgqq26xy3" path="res://scenes/interactable_monitor.tscn" id="17_hiaay"]
 [ext_resource type="ArrayMesh" uid="uid://csrflw5bxjgye" path="res://assets/office/office_TrashBin_Small.res" id="18_imllj"]
 [ext_resource type="ArrayMesh" uid="uid://ck4d12e2hjvp6" path="res://assets/office/office_Pencil_1.res" id="19_rb04w"]
 [ext_resource type="ArrayMesh" uid="uid://nta3nag11ofp" path="res://assets/office/office_Pencil_2.res" id="20_kn5mp"]
@@ -93,6 +97,16 @@ uv1_scale = Vector3(0.1, 0.1, 0.1)
 uv1_offset = Vector3(3.005, 1.315, 0)
 
 [node name="MainLevel" type="Node3D"]
+
+[node name="TaskManager" type="Node" parent="." node_paths=PackedStringArray("telephones", "office_printer", "computer", "player")]
+unique_name_in_owner = true
+script = ExtResource("2_7dhvd")
+telephones = [NodePath("../Cubicles/Cubicle 1/Telephone"), NodePath("../Cubicles/Cubicle main/Telephone"), NodePath("../Cubicles/Cubicle 2/Telephone")]
+office_printer = NodePath("../Printer/OfficePrinter")
+computer = NodePath("../Cubicles/Cubicle main/Computer")
+player = NodePath("../Player")
+calculator_task = ExtResource("2_mcsxj")
+telephone_task = ExtResource("3_i4uaf")
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00327063, -0.0109878, 0.0013783)
@@ -354,6 +368,10 @@ transform = Transform3D(0.86201, 0, -0.506892, 0, 1, 0, 0.506892, 0, 0.86201, 0.
 [node name="Cubicle main" parent="Cubicles" instance=ExtResource("7_4ceh7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 
+[node name="Computer" parent="Cubicles/Cubicle main" instance=ExtResource("17_hiaay")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.398598, 0.949, -1.21689)
+
 [node name="OfficeTape" type="MeshInstance3D" parent="Cubicles/Cubicle main"]
 transform = Transform3D(0.811411, 0, -0.584476, 0, 1, 0, 0.584476, 0, 0.811411, 0.703525, 0.949, -0.745158)
 mesh = ExtResource("5_2c0wl")
@@ -436,6 +454,7 @@ transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 1.0242, 
 mesh = ExtResource("15_mcan8")
 
 [node name="Telephone" parent="Cubicles/Cubicle main" instance=ExtResource("25_ii4ae")]
+unique_name_in_owner = true
 transform = Transform3D(0.86201, 0, -0.506892, 0, 1, 0, 0.506892, 0, 0.86201, 0.558793, 0.950254, -2.03944)
 
 [node name="Cubicle 2" parent="Cubicles" instance=ExtResource("2_bfrnm")]
@@ -505,6 +524,7 @@ skeleton = NodePath("../../..")
 transform = Transform3D(0.86201, 0, -0.506892, 0, 1, 0, 0.506892, 0, 0.86201, 0.558793, 0.950254, -2.1155)
 
 [node name="Player" parent="." instance=ExtResource("11_lu6gu")]
+unique_name_in_owner = true
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 3.1139, 0, -5.68953)
 
 [node name="Lights" type="Node3D" parent="."]
@@ -785,4 +805,5 @@ mesh = ExtResource("4_plrny")
 skeleton = NodePath("../..")
 
 [node name="OfficePrinter" parent="Printer" instance=ExtResource("39_kgtl7")]
+unique_name_in_owner = true
 transform = Transform3D(1, -7.14008e-08, 5.01661e-06, 7.14008e-08, 1, -1.67166e-05, -5.01661e-06, 1.67166e-05, 1, 0, 0.949596, 1.03156)
