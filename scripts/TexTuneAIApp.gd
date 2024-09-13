@@ -83,6 +83,7 @@ func process_text(unprocessed: String) -> String:
 	last_text_length = current_text_length 
 	
 	if original == processed:
+		GameManager.text_rewritten.emit()
 		return reset()
 	
 	return processed

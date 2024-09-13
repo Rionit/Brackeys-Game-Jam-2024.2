@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_t7ayj")
-title = "Calculator App"
-description = "Solve equations"
+title = "Calculator"
+description = "Solve equations in the Calculator app"
 count = 10

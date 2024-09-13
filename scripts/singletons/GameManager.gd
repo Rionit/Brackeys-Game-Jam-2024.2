@@ -1,7 +1,11 @@
 extends Node
 
-signal task_finished(name: String)
+signal task_finished(task_name: String)
 signal task_started(object, task: Task)
+signal task_updated(task_name: String)
+
+signal equation_calculated
+signal text_rewritten
 
 func increase_stress(amount: float) -> void:
 	Consts.stress_level += amount

@@ -7,6 +7,7 @@ var is_mouse_inside = false
 var last_event_pos2D = null
 # The time of the last event in seconds since engine start.
 var last_event_time: float = -1.0
+var active_tasks : Array[Task]
 
 @onready var node_viewport = $Display/SubViewport
 @onready var node_quad = $Display
@@ -17,6 +18,13 @@ func _ready():
 	node_area.mouse_entered.connect(_mouse_entered_area)
 	node_area.mouse_exited.connect(_mouse_exited_area)
 	node_area.input_event.connect(_mouse_input_event)
+	GameManager.equation_calculated.connect(_on_equation_calculated)
+	GameManager.text_rewritten.connect(_on_text_rewritten)
+
+func init(object, task):
+	if self == object:
+		interactable = true
+		active_tasks.push_back(task)
 
 func _mouse_entered_area():
 	is_mouse_inside = true
@@ -98,3 +106,34 @@ func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Ve
 
 	# Finally, send the processed input event to the viewport.
 	node_viewport.push_input(event)
+
+func get_task_remainder(task_name):
+	for task in active_tasks:
+		print(task.title.to_lower())
+		if task.title.to_lower() == task_name:
+			task.count -= 1
+			return task.count
+	return null
+
+func remove_task(task_name):
+	for i in range(active_tasks.size()):
+		if active_tasks[i].title.to_lower() == task_name:
+			active_tasks.remove_at(i)
+			return
+
+func update_task(task_name):
+	var rem = get_task_remainder(task_name)
+	if rem == null: return
+	
+	if rem <= 0:
+		remove_task(task_name)
+		GameManager.task_finished.emit(task_name)
+		return
+		
+	GameManager.task_updated.emit(task_name)
+	
+func _on_equation_calculated():
+	update_task("calculator")
+	
+func _on_text_rewritten():
+	update_task("textune")

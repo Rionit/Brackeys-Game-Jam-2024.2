@@ -43,10 +43,11 @@ func reset():
 func check_user():
 	var user_answer = user_input.text
 	if str(answer) == user_answer:
-		print("yippeee")
+		#print("yippeee")
+		GameManager.equation_calculated.emit()
 		GameManager.decrease_stress(Consts.cal_good)
 	else:
-		print("hahahah dumbass")
+		#print("hahahah dumbass")
 		GameManager.increase_stress(Consts.cal_bad)
 	reset()
 

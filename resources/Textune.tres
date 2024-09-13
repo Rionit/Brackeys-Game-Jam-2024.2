@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Task" load_steps=2 format=3 uid="uid://26hvttpvatth"]
+
+[ext_resource type="Script" path="res://scripts/Task.gd" id="1_dlkhc"]
+
+[resource]
+script = ExtResource("1_dlkhc")
+title = "TexTune"
+description = "Rewrite text in the app TexTune AI Trainer"
+count = 5

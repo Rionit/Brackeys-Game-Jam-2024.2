@@ -5,6 +5,8 @@ class_name OfficePrinter
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	GameManager.decrease_stress(Consts.print_good)
+	GameManager.task_finished.emit("printer")
+	interactable = false
 	exit()
 	
 func interact(body):

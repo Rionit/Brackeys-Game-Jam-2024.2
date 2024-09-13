@@ -19,7 +19,7 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	mesh.get_active_material(0).next_pass.set_shader_parameter("outline_width", outline_width)
 
-func init(object, task):
+func init(object, _task):
 	if self == object:
 		interactable = true
 

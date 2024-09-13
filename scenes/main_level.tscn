@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://m8x7hr1574di"]
+[gd_scene load_steps=51 format=4 uid="uid://m8x7hr1574di"]
 
 [ext_resource type="ArrayMesh" uid="uid://leh6ovckg0jo" path="res://assets/office/office_Floor.res" id="1_eptkj"]
 [ext_resource type="Script" path="res://scripts/TaskManager.gd" id="2_7dhvd"]
@@ -6,8 +6,10 @@
 [ext_resource type="Resource" uid="uid://cd71qlkxvoyff" path="res://resources/Calculator.tres" id="2_mcsxj"]
 [ext_resource type="PackedScene" uid="uid://dm35c4frwby5n" path="res://scenes/office_chair.tscn" id="3_0dyrf"]
 [ext_resource type="Resource" uid="uid://c0h5lttmcy6hq" path="res://resources/Telephone.tres" id="3_i4uaf"]
+[ext_resource type="Resource" uid="uid://dyfb607y8s076" path="res://resources/Printer.tres" id="4_ntn85"]
 [ext_resource type="ArrayMesh" uid="uid://cvu4f66whumlf" path="res://assets/office/office_Office_Files_A.res" id="4_plrny"]
 [ext_resource type="ArrayMesh" uid="uid://baw547e8eo2ee" path="res://assets/office/office_Tape.res" id="5_2c0wl"]
+[ext_resource type="Resource" uid="uid://26hvttpvatth" path="res://resources/Textune.tres" id="5_4cdwb"]
 [ext_resource type="ArrayMesh" uid="uid://clmsowwhs7nqh" path="res://assets/office/office_TrashBin.res" id="6_q0b82"]
 [ext_resource type="PackedScene" uid="uid://dajfequ5nusk5" path="res://scenes/main_cubicle.tscn" id="7_4ceh7"]
 [ext_resource type="ArrayMesh" uid="uid://i873p7ge805f" path="res://assets/office/office_Notepad.res" id="7_gjcg1"]
@@ -107,6 +109,8 @@ computer = NodePath("../Cubicles/Cubicle main/Computer")
 player = NodePath("../Player")
 calculator_task = ExtResource("2_mcsxj")
 telephone_task = ExtResource("3_i4uaf")
+printer_task = ExtResource("4_ntn85")
+textune_task = ExtResource("5_4cdwb")
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00327063, -0.0109878, 0.0013783)
