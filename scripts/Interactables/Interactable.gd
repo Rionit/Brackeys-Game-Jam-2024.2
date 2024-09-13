@@ -29,7 +29,7 @@ func _on_task_started(object, task):
 func exit() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	await CameraTransition.transition_camera3D(camera, player.camera, 0.8)
-	Consts.interacting = false
+	GameManager.interacting = false
 	interacting = false
 
 func set_highlighted(value: bool) -> void:
@@ -43,7 +43,7 @@ func set_highlighted(value: bool) -> void:
 
 func interact(body):
 	player = body
-	Consts.interacting = true
+	GameManager.interacting = true
 	interacting = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	CameraTransition.transition_camera3D(player.camera, camera, 0.7)

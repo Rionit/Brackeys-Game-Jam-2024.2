@@ -15,7 +15,7 @@ func create_new(_object, task: Task):
 	add_child(new_task_ui)
 	tasks.push_back({task.title.to_lower(): new_task_ui})
 
-func delete(title: String):
+func delete(_object, title: String):
 	title = title.to_lower()
 	for task in tasks:
 		# Get the first key (task name) from the dictionary

@@ -2,6 +2,7 @@ extends VBoxContainer
 
 @onready var title: Label = $Title
 @onready var description: Label = $Description
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var task: Task
 
@@ -10,6 +11,7 @@ func _ready() -> void:
 	update_description()
 	
 	GameManager.task_updated.connect(_on_task_updated)
+	animation_player.play("init")
 
 func update_description():
 	var count_text = ""

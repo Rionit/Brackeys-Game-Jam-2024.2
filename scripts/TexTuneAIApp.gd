@@ -1,7 +1,7 @@
 extends NinePatchRect
 
 @onready var user_text_colored: RichTextLabel = %UserTextColored
-@onready var user_text_input: TextEdit = %UserTextInput
+@onready var user_text_input: LineEdit = %UserTextInput
 @onready var original_text: RichTextLabel = $VBoxContainer/MarginContainer/OriginalText
 
 var bbcode_regex = RegEx.new()
@@ -45,7 +45,7 @@ func _on_launcher_pressed() -> void:
 	visible = true
 	user_text_input.grab_focus()
 
-func _on_user_text_input_text_changed() -> void:
+func _on_user_text_input_text_changed(_new_text) -> void:
 	var unprocessed_text = user_text_input.text
 	user_text_colored.text = process_text(unprocessed_text)
 
@@ -75,7 +75,9 @@ func process_text(unprocessed: String) -> String:
 		var c2 = original[i]
 		
 		if c1 != c2:
-			if current_text_length >= last_text_length:
+			#if current_text_length >= last_text_length:
+				#GameManager.increase_stress(Consts.tex_bad)
+			if i == unprocessed.length() - 1:
 				GameManager.increase_stress(Consts.tex_bad)
 			processed += "[color=red]" + c1 + "[/color]"
 		else:

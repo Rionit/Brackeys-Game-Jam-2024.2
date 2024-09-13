@@ -19,6 +19,6 @@ func init(task):
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	GameManager.decrease_stress(Consts.tel_good)
-	GameManager.task_finished.emit("telephone")
+	GameManager.task_finished.emit(self, "telephone")
 	interactable = false
 	exit()

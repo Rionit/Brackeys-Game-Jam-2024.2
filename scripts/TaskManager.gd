@@ -10,20 +10,45 @@ extends Node
 @export var printer_task : Resource
 @export var textune_task : Resource
 
+var active_tasks : Array
+
 func _ready() -> void:
 	GameManager.task_finished.connect(_on_task_finished)
+	create_timer(0.5, init_tasks)
+	start_task_timers()
 
-func _on_task_finished(title: String):
-	print("yup " + title)
+func create_timer(wait_time, function):
+	var timer = Timer.new()
+	timer.timeout.connect(function.bind(timer))	
+	timer.wait_time = wait_time
+	add_child(timer)
+	timer.start()
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("debug"):
-		test()
-
-func test():
-	#GameManager.task_started.emit(telephones[0], telephone_task)
-	#GameManager.task_started.emit(telephones[1], telephone_task)
-	GameManager.task_started.emit(telephones[2], telephone_task)
-	GameManager.task_started.emit(office_printer, printer_task)
+func init_tasks(init_tasks_timer):
 	GameManager.task_started.emit(computer, calculator_task)
 	GameManager.task_started.emit(computer, textune_task)
+	init_tasks_timer.queue_free()
+	
+func start_task_timers():
+	for telephone in telephones:
+		create_timer(randi_range(20, 50), func(timer): _on_task_timer_timeout(telephone, telephone_task, timer))
+	create_timer(randi_range(20, 50), func(timer): _on_task_timer_timeout(office_printer, printer_task, timer))
+
+func _on_task_timer_timeout(object, task: Task, timer: Timer):
+	if !active_tasks.has(object):
+		active_tasks.push_back(object)
+		timer.wait_time = randi_range(15, 100)
+		GameManager.task_started.emit(object, task)
+
+func _on_task_finished(object, _title: String):
+	active_tasks.erase(object)
+
+#func _input(event: InputEvent) -> void:
+	#if event.is_action_pressed("debug"):
+		#test()
+#
+#func test():
+	##GameManager.task_started.emit(telephones[0], telephone_task)
+	##GameManager.task_started.emit(telephones[1], telephone_task)
+	#GameManager.task_started.emit(telephones[2], telephone_task)
+	#GameManager.task_started.emit(office_printer, printer_task)

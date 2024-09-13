@@ -13,11 +13,11 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event):
-	if !Consts.interacting:
+	if !GameManager.interacting:
 		handle_mouse_input(event)
 
 func _physics_process(delta):
-	if !Consts.interacting:
+	if !GameManager.interacting:
 		head.update(velocity, delta)
 		move_and_slide()
 

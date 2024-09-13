@@ -48,7 +48,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and interacting:
 		key_click.key_pressed()
 	
-	if event is InputEventMouseButton and event.is_pressed() and interacting:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed() and interacting:
 		key_click.mouse_clicked()
 
 func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Vector3, _normal: Vector3, _shape_idx: int):
@@ -132,7 +132,7 @@ func update_task(task_name):
 	
 	if rem <= 0:
 		remove_task(task_name)
-		GameManager.task_finished.emit(task_name)
+		GameManager.task_finished.emit(self, task_name)
 		return
 		
 	GameManager.task_updated.emit(task_name)
