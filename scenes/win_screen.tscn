@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtwn1lqjjtwm3"]
+
+[ext_resource type="Script" path="res://scripts/WinScreen.gd" id="1_idrih"]
+
+[node name="WinScreen" type="Node"]
+script = ExtResource("1_idrih")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -540.0
+offset_right = -192.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.164894, 0.189132, 0.226018, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -697.0
+offset_top = -390.0
+offset_right = -471.0
+offset_bottom = -280.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Congratulations! 
+You stayed calm and finished
+all tasks."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Play again"

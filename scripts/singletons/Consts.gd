@@ -1,6 +1,6 @@
 extends Node
 
-var incremental_stress := 0.5
+var incremental_stress := 0.1
 
 var outline_width := 4.0
 var outline_color : Color = Color.hex(0x00aeffff)

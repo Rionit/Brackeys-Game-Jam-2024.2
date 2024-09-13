@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://m8x7hr1574di"]
+[gd_scene load_steps=55 format=4 uid="uid://m8x7hr1574di"]
 
 [ext_resource type="ArrayMesh" uid="uid://leh6ovckg0jo" path="res://assets/office/office_Floor.res" id="1_eptkj"]
 [ext_resource type="Script" path="res://scripts/TaskManager.gd" id="2_7dhvd"]
@@ -97,6 +97,18 @@ shadow_mesh = SubResource("ArrayMesh_uiulg")
 albedo_color = Color(0.633757, 0.633757, 0.633757, 1)
 uv1_scale = Vector3(0.1, 0.1, 0.1)
 uv1_offset = Vector3(3.005, 1.315, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nln0s"]
+size = Vector3(0.86377, 0.961304, 2.98352)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_obkr7"]
+size = Vector3(0.374756, 0.96637, 1.27504)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_64617"]
+size = Vector3(0.206787, 1.46301, 0.226891)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oey7g"]
+size = Vector3(1.49121, 0.962311, 0.742065)
 
 [node name="MainLevel" type="Node3D"]
 
@@ -776,12 +788,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.40285, 0.000237182, -6.704
 mesh = ExtResource("37_irp2j")
 skeleton = NodePath("../..")
 
-[node name="Printer" type="Node" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="Kitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.33828, 0, -4.50488)
 
-[node name="OfficeOfficeDesk1" type="MeshInstance3D" parent="Printer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.462581, 0.000237182, 1.06424)
-mesh = ExtResource("30_5f1yo")
-skeleton = NodePath("../..")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kitchen/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0681152, 0.467957, 0.158142)
+shape = SubResource("BoxShape3D_nln0s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Kitchen/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0631104, 0.479828, -2.19947)
+shape = SubResource("BoxShape3D_obkr7")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Kitchen/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00170898, 0.711334, 2.23951)
+shape = SubResource("BoxShape3D_64617")
+
+[node name="Printer" type="Node" parent="."]
 
 [node name="OfficeTrashBin" type="MeshInstance3D" parent="Printer"]
 transform = Transform3D(0.996499, 0, 0.0836083, 0, 1, 0, -0.0836083, 0, 0.996499, 0.899447, 0.000237182, 1.17817)
@@ -811,3 +833,14 @@ skeleton = NodePath("../..")
 [node name="OfficePrinter" parent="Printer" instance=ExtResource("39_kgtl7")]
 unique_name_in_owner = true
 transform = Transform3D(1, -7.14008e-08, 5.01661e-06, 7.14008e-08, 1, -1.67166e-05, -5.01661e-06, 1.67166e-05, 1, 0, 0.949596, 1.03156)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Printer"]
+
+[node name="OfficeOfficeDesk1" type="MeshInstance3D" parent="Printer/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.462581, 0.000237182, 1.06424)
+mesh = ExtResource("30_5f1yo")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Printer/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.462581, 0.47065, 1.07394)
+shape = SubResource("BoxShape3D_oey7g")

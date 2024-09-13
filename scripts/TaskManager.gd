@@ -27,25 +27,31 @@ func create_timer(wait_time, function):
 func init_tasks(init_tasks_timer):
 	GameManager.task_started.emit(computer, calculator_task)
 	GameManager.task_started.emit(computer, textune_task)
+	active_tasks.push_back(computer)
+	active_tasks.push_back(computer)
 	init_tasks_timer.queue_free()
 	
 func start_task_timers():
 	for telephone in telephones:
-		create_timer(randi_range(20, 50), func(timer): _on_task_timer_timeout(telephone, telephone_task, timer))
+		create_timer(randi_range(20, 100), func(timer): _on_task_timer_timeout(telephone, telephone_task, timer))
 	create_timer(randi_range(20, 50), func(timer): _on_task_timer_timeout(office_printer, printer_task, timer))
 
 func _on_task_timer_timeout(object, task: Task, timer: Timer):
 	if !active_tasks.has(object):
 		active_tasks.push_back(object)
-		timer.wait_time = randi_range(15, 100)
+		timer.wait_time = randi_range(60, 120)
 		GameManager.task_started.emit(object, task)
+		GameManager.active_tasks = active_tasks.size()
 
 func _on_task_finished(object, _title: String):
 	active_tasks.erase(object)
+	GameManager.active_tasks = active_tasks.size()
+	if active_tasks.size() == 0:
+		GameManager.calm.emit()
 
-#func _input(event: InputEvent) -> void:
-	#if event.is_action_pressed("debug"):
-		#test()
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("debug"):
+		GameManager.calm.emit()
 #
 #func test():
 	##GameManager.task_started.emit(telephones[0], telephone_task)
