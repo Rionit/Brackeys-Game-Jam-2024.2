@@ -14,14 +14,17 @@ var player = null
 
 func _ready() -> void:
 	mesh.get_active_material(0).next_pass.set_shader_parameter("outline_color", Consts.outline_color)
-	GameManager.task_started.connect(init)
+	GameManager.task_started.connect(_on_task_started)
 	
 func _physics_process(_delta: float) -> void:
 	mesh.get_active_material(0).next_pass.set_shader_parameter("outline_width", outline_width)
 
-func init(object, _task):
+func init(_task):
+	interactable = true
+
+func _on_task_started(object, task):
 	if self == object:
-		interactable = true
+		init(task)
 
 func exit() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

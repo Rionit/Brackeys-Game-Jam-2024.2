@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvqhehp8cpoe7"]
+[gd_scene load_steps=9 format=3 uid="uid://bvqhehp8cpoe7"]
 
 [ext_resource type="Script" path="res://scripts/Interactables/Telephone.gd" id="1_c3fvv"]
 [ext_resource type="ArrayMesh" uid="uid://5cukm10cg5ct" path="res://assets/office/office_Phone_A Base.res" id="1_sk3xd"]
 [ext_resource type="ArrayMesh" uid="uid://b7mqbirtyps7w" path="res://assets/office/office_Phone_B.res" id="2_1naka"]
+[ext_resource type="AudioStream" uid="uid://if32nk67s0as" path="res://audio/sfx/phone_call.mp3" id="4_2syxu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h3eve"]
 size = Vector3(0.315948, 0.0909119, 0.211182)
@@ -33,6 +34,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(1.46647, -1.5784, -0.0200069)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Audio:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_2syxu")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Audio:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_lhdln"]
 resource_name = "pick_up"
@@ -44,7 +69,7 @@ tracks/0/path = NodePath("OfficePhoneB2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2.2, 3.16667, 4, 5),
+"times": PackedFloat32Array(0, 1, 2.2, 3.03334, 3.5, 5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0.0315883, 0.0512399, 0.054376), Vector3(0.313615, 0.302566, -0.213388), Vector3(0.318857, 0.293663, -0.213388), Vector3(0.311743, 0.310118, -0.213388), Vector3(0.311743, 0.321353, -0.213388), Vector3(0.0315883, 0.0512399, 0.054376)]
@@ -56,10 +81,34 @@ tracks/1/path = NodePath("OfficePhoneB2:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.06667, 2.1, 3.23333, 4, 5),
+"times": PackedFloat32Array(0, 1.06667, 2.1, 3.1, 3.5, 5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(1.46647, -1.5784, -0.0200069), Vector3(-0.18343, -0.307802, 0.406064), Vector3(-0.18343, -0.352971, 0.406064), Vector3(-0.149637, -0.36804, 0.496895), Vector3(-0.149637, -0.36804, 0.496895), Vector3(1.46647, -1.5784, -0.0200069)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Audio:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_2syxu")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Audio:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p1t0l"]
@@ -94,5 +143,10 @@ transform = Transform3D(-4.37114e-08, -0.707107, 0.707107, 0, 0.707107, 0.707107
 libraries = {
 "": SubResource("AnimationLibrary_p1t0l")
 }
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_2syxu")
+volume_db = -15.0
+bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

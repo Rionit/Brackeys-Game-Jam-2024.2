@@ -60,6 +60,7 @@ func _on_exit_pressed() -> void:
 
 func _on_launcher_pressed() -> void:
 	visible = true
+	user_input.grab_focus()
 
 func _on_user_input_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):

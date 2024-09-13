@@ -12,6 +12,7 @@ var active_tasks : Array[Task]
 @onready var node_viewport = $Display/SubViewport
 @onready var node_quad = $Display
 @onready var node_area = $Area
+@onready var key_click: Node3D = $KeyClick
 
 func _ready():
 	super()
@@ -21,10 +22,9 @@ func _ready():
 	GameManager.equation_calculated.connect(_on_equation_calculated)
 	GameManager.text_rewritten.connect(_on_text_rewritten)
 
-func init(object, task):
-	if self == object:
-		interactable = true
-		active_tasks.push_back(task)
+func init(task):
+	interactable = true
+	active_tasks.push_back(task)
 
 func _mouse_entered_area():
 	is_mouse_inside = true
@@ -44,6 +44,12 @@ func _unhandled_input(event):
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") and interacting:
 		exit()
+	
+	if event is InputEventKey and event.pressed and interacting:
+		key_click.key_pressed()
+	
+	if event is InputEventMouseButton and event.is_pressed() and interacting:
+		key_click.mouse_clicked()
 
 func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Vector3, _normal: Vector3, _shape_idx: int):
 	# Get mesh size to detect edges and make conversions. This code only support PlaneMesh and QuadMesh.
@@ -109,7 +115,6 @@ func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Ve
 
 func get_task_remainder(task_name):
 	for task in active_tasks:
-		print(task.title.to_lower())
 		if task.title.to_lower() == task_name:
 			task.count -= 1
 			return task.count

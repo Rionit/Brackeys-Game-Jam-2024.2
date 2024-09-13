@@ -43,6 +43,7 @@ func _on_exit_pressed() -> void:
 
 func _on_launcher_pressed() -> void:
 	visible = true
+	user_text_input.grab_focus()
 
 func _on_user_text_input_text_changed() -> void:
 	var unprocessed_text = user_text_input.text

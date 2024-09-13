@@ -1,0 +1,15 @@
+[gd_scene load_steps=9 format=3 uid="uid://cfeod6m8hlmtc"]
+
+[ext_resource type="Script" path="res://scripts/KeyClick.gd" id="1_pf6mt"]
+[ext_resource type="AudioStream" uid="uid://c4y1s2hkfgpru" path="res://audio/sfx/keyboard/key1.mp3" id="2_rrvwj"]
+[ext_resource type="AudioStream" uid="uid://tdaqg03e7tbh" path="res://audio/sfx/keyboard/key2.mp3" id="3_8qy8r"]
+[ext_resource type="AudioStream" uid="uid://c5t47li0rtnc0" path="res://audio/sfx/keyboard/key3.mp3" id="4_ovsjd"]
+[ext_resource type="AudioStream" uid="uid://c4ycb73n4mb0h" path="res://audio/sfx/keyboard/key4.mp3" id="5_oydln"]
+[ext_resource type="AudioStream" uid="uid://b134kpqo7gwrg" path="res://audio/sfx/keyboard/key5.mp3" id="6_yxajb"]
+[ext_resource type="AudioStream" uid="uid://bhcapw7nr8vxe" path="res://audio/sfx/keyboard/key6.mp3" id="7_wskvb"]
+[ext_resource type="AudioStream" uid="uid://btra1i1lt2kw2" path="res://audio/sfx/mouse_click.wav" id="8_en6fb"]
+
+[node name="KeyClick" type="Node3D"]
+script = ExtResource("1_pf6mt")
+key_sounds = Array[Resource]([ExtResource("2_rrvwj"), ExtResource("3_8qy8r"), ExtResource("4_ovsjd"), ExtResource("5_oydln"), ExtResource("6_yxajb"), ExtResource("7_wskvb")])
+mouse_click = ExtResource("8_en6fb")

@@ -21,8 +21,8 @@ func _input(event: InputEvent) -> void:
 		test()
 
 func test():
-	GameManager.task_started.emit(telephones[0], telephone_task)
-	GameManager.task_started.emit(telephones[1], telephone_task)
+	#GameManager.task_started.emit(telephones[0], telephone_task)
+	#GameManager.task_started.emit(telephones[1], telephone_task)
 	GameManager.task_started.emit(telephones[2], telephone_task)
 	GameManager.task_started.emit(office_printer, printer_task)
 	GameManager.task_started.emit(computer, calculator_task)

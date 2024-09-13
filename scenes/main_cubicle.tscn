@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dajfequ5nusk5"]
+[gd_scene load_steps=10 format=3 uid="uid://dajfequ5nusk5"]
 
 [ext_resource type="ArrayMesh" uid="uid://8etpjcuylarp" path="res://assets/office/office_Wall_Small.res" id="1_wlmhx"]
 [ext_resource type="ArrayMesh" uid="uid://dvbs3kcndemb7" path="res://assets/office/office_Office_Desk_4.res" id="2_acbpi"]
 [ext_resource type="ArrayMesh" uid="uid://bmuuhhqfg4o3m" path="res://assets/office/office_Computer_Case.res" id="4_7osk1"]
+[ext_resource type="AudioStream" uid="uid://b0pbm36ilisvc" path="res://audio/sfx/pc_idle.mp3" id="4_lm8t3"]
 [ext_resource type="ArrayMesh" uid="uid://na8gtruwlj5t" path="res://assets/office/office_Computer_Keyboard.res" id="5_gqqye"]
 [ext_resource type="ArrayMesh" uid="uid://bdn6yffewpeyo" path="res://assets/office/office_Computer_Mouse.res" id="6_d4i5s"]
 
@@ -61,3 +62,11 @@ skeleton = NodePath("")
 transform = Transform3D(0.0668138, 0, 0.997765, 0, 1, 0, -0.997765, 0, 0.0668138, 0.667021, 0.95515, -1.59867)
 mesh = ExtResource("6_d4i5s")
 skeleton = NodePath("")
+
+[node name="AudioIdle" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.318143, 1.14194, -1.69425)
+stream = ExtResource("4_lm8t3")
+volume_db = -10.0
+unit_size = 1.0
+autoplay = true
+bus = &"SFX"

@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://daylvoj8osmbv"]
+[gd_scene load_steps=11 format=3 uid="uid://daylvoj8osmbv"]
 
 [ext_resource type="Script" path="res://scripts/Interactables/OfficePrinter.gd" id="1_wkyai"]
 [ext_resource type="ArrayMesh" uid="uid://cbh34khpprxsu" path="res://assets/office/office_Printer.res" id="2_n2nfk"]
 [ext_resource type="ArrayMesh" uid="uid://bkw5ku1vgbhsf" path="res://assets/office/office_Office_Files_C.res" id="3_fmua2"]
 [ext_resource type="ArrayMesh" uid="uid://bs2c781v7gpqr" path="res://assets/office/office_Office_Files_D_Custom.res" id="4_yfccw"]
+[ext_resource type="AudioStream" uid="uid://bsdoib0amjmaj" path="res://audio/sfx/printer.mp3" id="5_uc24a"]
+[ext_resource type="AudioStream" uid="uid://uony30tm88it" path="res://audio/sfx/printer_idle.wav" id="6_34i31"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fqrqj"]
 size = Vector3(0.713867, 0.500244, 0.671875)
@@ -46,6 +48,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioPrinting:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_vem8l"]
 resource_name = "printing"
@@ -86,6 +100,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioPrinting:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_txa45"]
 _data = {
@@ -122,5 +148,17 @@ mesh = ExtResource("3_fmua2")
 [node name="PrintedPaper" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.999994, -0.00292681, -0.00167734, 0.00336178, -0.823437, -0.567397, 0.00027948, -0.5674, 0.823442, 0, 0, 0)
 mesh = ExtResource("4_yfccw")
+
+[node name="AudioPrinting" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_uc24a")
+volume_db = -8.0
+bus = &"SFX"
+
+[node name="AudioIdle" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_34i31")
+volume_db = -20.0
+unit_size = 1.0
+autoplay = true
+bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
